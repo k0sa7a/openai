@@ -3,21 +3,40 @@
             [cheshire.core :as json]
             [environ.core :refer [env]]))
 
-;; Dont forget to export the env variable in the terminal
-;;  export OPENAI_API_KEY=xxxxxxx
+;; First export the env variable in the terminal
+;; export OPENAI_API_KEY=xxxxxxx
 ;; You then can use the api key
 (def openai-api-key (env :openai-api-key))
 
 
-;; Test on the cheshire library
-;; (json/generate-string {:foo "bar" :baz 5})
+;; list the models to choose from
+(defn list-models []
+  (let [response (client/get "https://api.openai.com/v1/models"
+                             {:headers {"Authorization" (str "Bearer " openai-api-key)}})
+        body (:body response)]
+    (println body))
+  )
+;; (list-models)
 
-;; Test to see if access to the API is OK
-;; (client/get "https://api.openai.com/v1/models"
-;;             {:headers {"Authorization" (str "Bearer " openai-api-key)}})
 
-;; If we want to print just the body
-;; (let [response (client/get "https://api.openai.com/v1/models"
-;;                            {:headers {"Authorization" (str "Bearer " openai-api-key)}})
-;;       body (:body response)]
-;;   (println body))
+;; function to create an assistant
+;; it returns the id of that assistant
+(defn create-assistant [name model instruction ]
+  (let [payload (json/generate-string {"instructions" instruction
+                                       "name" name
+                                      ;;  "tools" [{"type" "retrieval"}]
+                                       "model" model})
+        response (client/post "https://api.openai.com/v1/assistants" {:body  payload
+                                                                      :headers {"Authorization" (str "Bearer " openai-api-key)
+                                                                                "Content-Type" "application/json"
+                                                                                "OpenAI-Beta" "assistants=v1"}})
+        body (:body response)
+        parsed-body (json/parse-string body true)]
+
+
+    (get parsed-body :id)
+    )
+
+  )
+
+(create-assistant "Assistant test1" "gpt-3.5-turbo-1106" "You will reply in rhymes")

@@ -10,7 +10,7 @@
 ;   - See https://calva.io/connect-sequences/
 ;
 ; Starting Jack-in Terminal: pushd /home/k0sa7a/code/k0sa7a/openai ; lein update-in :dependencies conj '[nrepl,"1.0.0"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.28.5"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- with-profile +uberjar repl :headless ; popd
-; Using host:port 127.0.0.1:42389 ...
+; Using host:port 127.0.0.1:35979 ...
 ; Hooking up nREPL sessions ...
 ; Connected session: clj
 ; TIPS:
@@ -27,35 +27,35 @@ clj꞉openai.core꞉> 
 ; Jack-in done.
 clj꞉openai.core꞉> 
 ; Evaluating file: openai_connector.clj
-; Syntax error compiling at (src/openai/openai_connector.clj:1:1).
-; Unable to resolve symbol: Test in this context
-; Evaluation of file openai_connector.clj failed: class clojure.lang.Compiler$CompilerException
+#'openai.openai-connector/openai-api-key
+clj꞉openai.openai-connector꞉> 
+#'openai.openai-connector/openai-api-key
 clj꞉openai.openai-connector꞉> 
 ; Evaluating file: openai_connector.clj
 {:cached nil,
- :request-time 354,
+ :request-time 341,
  :repeatable? false,
  :protocol-version {:name "HTTP", :major 1, :minor 1},
  :streaming? true,
  :http-client
- #object[org.apache.http.impl.client.InternalHttpClient 0x1fa7df61 "org.apache.http.impl.client.InternalHttpClient@1fa7df61"],
+ #object[org.apache.http.impl.client.InternalHttpClient 0x7a008de3 "org.apache.http.impl.client.InternalHttpClient@7a008de3"],
  :chunked? true,
  :cookies
  {"__cf_bm"
   {:discard false,
    :domain "api.openai.com",
-   :expires #inst "2024-01-06T20:13:14.000-00:00",
+   :expires #inst "2024-01-07T14:18:34.000-00:00",
    :path "/",
    :secure true,
    :value
-   "khwuw.WPYehdWYmSa3m2gB_ai3BC0cGJTK4e8708A6w-1704570194-1-ATsvUWANTcYSijxuvzHXKx3mUZu9NePp8yse1JHNDMaVxhwK4JpCTEOIE/etfBqitP7BtIoUwUxAJB428DhVN48=",
+   "qazobZSgk9dISctT4dcx6piVSXZOvy241RuRCGqAOYY-1704635314-1-AWso9z6n0ireXH67i7njlQZhgvBr6Y/E11CyNnad8tFibwVppZpKmzNhCwjDaNRGeH2sYewwHwsEbFMzu6RYo80=",
    :version 0},
   "_cfuvid"
   {:discard true,
    :domain "api.openai.com",
    :path "/",
    :secure true,
-   :value "pDWYLBvbvBwGVJy7nxfTnIciPPSJMbLiXk.Wiegk2KM-1704570194081-0-604800000",
+   :value "QM0_k0a5o5iViKTzv3wfKx.oNYYgoATOLtG5BHkxbQU-1704635314865-0-604800000",
    :version 0}},
  :reason-phrase "OK",
  :headers
@@ -65,13 +65,13 @@ clj꞉openai.openai-connector꞉> 
   "alt-svc" "h3=\":443\"; ma=86400",
   "openai-version" "2020-10-01",
   "strict-transport-security" "max-age=15724800; includeSubDomains",
-  "openai-processing-ms" "99",
+  "openai-processing-ms" "104",
   "Connection" "close",
   "Transfer-Encoding" "chunked",
   "CF-Cache-Status" "DYNAMIC",
-  "CF-RAY" "841672df59e86385-LHR",
-  "Date" "Sat, 06 Jan 2024 19:43:14 GMT",
-  "x-request-id" "badf0eec2fbe9f5bad39d96b4543d721"},
+  "CF-RAY" "841ca8bc5e1c63f7-LHR",
+  "Date" "Sun, 07 Jan 2024 13:48:34 GMT",
+  "x-request-id" "b4f154a3ad95ea1db36e6f7cb7554c6b"},
  :orig-content-encoding "gzip",
  :status 200,
  :length -1,
@@ -79,5 +79,4712 @@ clj꞉openai.openai-connector꞉> 
  "{\n  \"object\": \"list\",\n  \"data\": [\n    {\n      \"id\": \"text-search-babbage-doc-001\",\n      \"object\": \"model\",\n      \"created\": 1651172509,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"curie-search-query\",\n      \"object\": \"model\",\n      \"created\": 1651172509,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"text-davinci-003\",\n      \"object\": \"model\",\n      \"created\": 1669599635,\n      \"owned_by\": \"openai-internal\"\n    },\n    {\n      \"id\": \"dall-e-3\",\n      \"object\": \"model\",\n      \"created\": 1698785189,\n      \"owned_by\": \"system\"\n    },\n    {\n      \"id\": \"text-search-babbage-query-001\",\n      \"object\": \"model\",\n      \"created\": 1651172509,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"babbage\",\n      \"object\": \"model\",\n      \"created\": 1649358449,\n      \"owned_by\": \"openai\"\n    },\n    {\n      \"id\": \"babbage-search-query\",\n      \"object\": \"model\",\n      \"created\": 1651172509,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"text-babbage-001\",\n      \"object\": \"model\",\n      \"created\": 1649364043,\n      \"owned_by\": \"openai\"\n    },\n    {\n      \"id\": \"text-similarity-davinci-001\",\n      \"object\": \"model\",\n      \"created\": 1651172505,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"davinci-similarity\",\n      \"object\": \"model\",\n      \"created\": 1651172509,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"curie-similarity\",\n      \"object\": \"model\",\n      \"created\": 1651172510,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"babbage-search-document\",\n      \"object\": \"model\",\n      \"created\": 1651172510,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"dall-e-2\",\n      \"object\": \"model\",\n      \"created\": 1698798177,\n      \"owned_by\": \"system\"\n    },\n    {\n      \"id\": \"curie-instruct-beta\",\n      \"object\": \"model\",\n      \"created\": 1649364042,\n      \"owned_by\": \"openai\"\n    },\n    {\n      \"id\": \"text-search-ada-doc-001\",\n      \"object\": \"model\",\n      \"created\": 1651172507,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"gpt-3.5-turbo-0301\",\n      \"object\": \"model\",\n      \"created\": 1677649963,\n      \"owned_by\": \"openai\"\n    },\n    {\n      \"id\": \"davinci-instruct-beta\",\n      \"object\": \"model\",\n      \"created\": 1649364042,\n      \"owned_by\": \"openai\"\n    },\n    {\n      \"id\": \"gpt-3.5-turbo-16k-0613\",\n      \"object\": \"model\",\n      \"created\": 1685474247,\n      \"owned_by\": \"openai\"\n    },\n    {\n      \"id\": \"text-similarity-babbage-001\",\n      \"object\": \"model\",\n      \"created\": 1651172505,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"text-search-davinci-doc-001\",\n      \"object\": \"model\",\n      \"created\": 1651172505,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"babbage-similarity\",\n      \"object\": \"model\",\n      \"created\": 1651172505,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"text-embedding-ada-002\",\n      \"object\": \"model\",\n      \"created\": 1671217299,\n      \"owned_by\": \"openai-internal\"\n    },\n    {\n      \"id\": \"davinci-search-query\",\n      \"object\": \"model\",\n      \"created\": 1651172505,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"text-similarity-curie-001\",\n      \"object\": \"model\",\n      \"created\": 1651172507,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"gpt-3.5-turbo-instruct\",\n      \"object\": \"model\",\n      \"created\": 1692901427,\n      \"owned_by\": \"system\"\n    },\n    {\n      \"id\": \"gpt-3.5-turbo-16k\",\n      \"object\": \"model\",\n      \"created\": 1683758102,\n      \"owned_by\": \"openai-internal\"\n    },\n    {\n      \"id\": \"text-davinci-001\",\n      \"object\": \"model\",\n      \"created\": 1649364042,\n      \"owned_by\": \"openai\"\n    },\n    {\n      \"id\": \"text-search-davinci-query-001\",\n      \"object\": \"model\",\n      \"created\": 1651172505,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"ada-search-document\",\n      \"object\": \"model\",\n      \"created\": 1651172507,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"gpt-3.5-turbo-0613\",\n      \"object\": \"model\",\n      \"created\": 1686587434,\n      \"owned_by\": \"openai\"\n    },\n    {\n      \"id\": \"ada-code-search-code\",\n      \"object\": \"model\",\n      \"created\": 1651172505,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"davinci-002\",\n      \"object\": \"model\",\n      \"created\": 1692634301,\n      \"owned_by\": \"system\"\n    },\n    {\n      \"id\": \"gpt-3.5-turbo-instruct-0914\",\n      \"object\": \"model\",\n      \"created\": 1694122472,\n      \"owned_by\": \"system\"\n    },\n    {\n      \"id\": \"babbage-002\",\n      \"object\": \"model\",\n      \"created\": 1692634615,\n      \"owned_by\": \"system\"\n    },\n    {\n      \"id\": \"davinci-search-document\",\n      \"object\": \"model\",\n      \"created\": 1651172509,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"curie-search-document\",\n      \"object\": \"model\",\n      \"created\": 1651172508,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"babbage-code-search-code\",\n      \"object\": \"model\",\n      \"created\": 1651172509,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"gpt-3.5-turbo\",\n      \"object\": \"model\",\n      \"created\": 1677610602,\n      \"owned_by\": \"openai\"\n    },\n    {\n      \"id\": \"text-search-ada-query-001\",\n      \"object\": \"model\",\n      \"created\": 1651172505,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"code-search-ada-text-001\",\n      \"object\": \"model\",\n      \"created\": 1651172507,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"babbage-code-search-text\",\n      \"object\": \"model\",\n      \"created\": 1651172509,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"code-search-babbage-code-001\",\n      \"object\": \"model\",\n      \"created\": 1651172507,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"ada-search-query\",\n      \"object\": \"model\",\n      \"created\": 1651172505,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"ada-code-search-text\",\n      \"object\": \"model\",\n      \"created\": 1651172510,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"tts-1-hd\",\n      \"object\": \"model\",\n      \"created\": 1699046015,\n      \"owned_by\": \"system\"\n    },\n    {\n      \"id\": \"text-search-curie-query-001\",\n      \"object\": \"model\",\n      \"created\": 1651172509,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"text-davinci-002\",\n      \"object\": \"model\",\n      \"created\": 1649880484,\n      \"owned_by\": \"openai\"\n    },\n    {\n      \"id\": \"code-search-babbage-text-001\",\n      \"object\": \"model\",\n      \"created\": 1651172507,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"ada\",\n      \"object\": \"model\",\n      \"created\": 1649357491,\n      \"owned_by\": \"openai\"\n    },\n    {\n      \"id\": \"text-ada-001\",\n      \"object\": \"model\",\n      \"created\": 1649364042,\n      \"owned_by\": \"openai\"\n    },\n    {\n      \"id\": \"ada-similarity\",\n      \"object\": \"model\",\n      \"created\": 1651172507,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"code-search-ada-code-001\",\n      \"object\": \"model\",\n      \"created\": 1651172507,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"text-similarity-ada-001\",\n      \"object\": \"model\",\n      \"created\": 1651172505,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"text-davinci-edit-001\",\n      \"object\": \"model\",\n      \"created\": 1649809179,\n      \"owned_by\": \"openai\"\n    },\n    {\n      \"id\": \"code-davinci-edit-001\",\n      \"object\": \"model\",\n      \"created\": 1649880484,\n      \"owned_by\": \"openai\"\n    },\n    {\n      \"id\": \"text-search-curie-doc-001\",\n      \"object\": \"model\",\n      \"created\": 1651172509,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"gpt-3.5-turbo-1106\",\n      \"object\": \"model\",\n      \"created\": 1698959748,\n      \"owned_by\": \"system\"\n    },\n    {\n      \"id\": \"text-curie-001\",\n      \"object\": \"model\",\n      \"created\": 1649364043,\n      \"owned_by\": \"openai\"\n    },\n    {\n      \"id\": \"curie\",\n      \"object\": \"model\",\n      \"created\": 1649359874,\n      \"owned_by\": \"openai\"\n    },\n    {\n      \"id\": \"whisper-1\",\n      \"object\": \"model\",\n      \"created\": 1677532384,\n      \"owned_by\": \"openai-internal\"\n    },\n    {\n      \"id\": \"tts-1\",\n      \"object\": \"model\",\n      \"created\": 1681940951,\n      \"owned_by\": \"openai-internal\"\n    },\n    {\n      \"id\": \"davinci\",\n      \"object\": \"model\",\n      \"created\": 1649359874,\n      \"owned_by\": \"openai\"\n    },\n    {\n      \"id\": \"tts-1-1106\",\n      \"object\": \"model\",\n      \"created\": 1699053241,\n      \"owned_by\": \"system\"\n    },\n    {\n      \"id\": \"tts-1-hd-1106\",\n      \"object\": \"model\",\n      \"created\": 1699053533,\n      \"owned_by\": \"system\"\n    }\n  ]\n}\n",
  :trace-redirects []}
 clj꞉openai.openai-connector꞉> 
-#'openai.openai-connector/openai-api-key
+{:cached nil,
+ :request-time 254,
+ :repeatable? false,
+ :protocol-version {:name "HTTP", :major 1, :minor 1},
+ :streaming? true,
+ :http-client
+ #object[org.apache.http.impl.client.InternalHttpClient 0x419b7947 "org.apache.http.impl.client.InternalHttpClient@419b7947"],
+ :chunked? true,
+ :cookies
+ {"__cf_bm"
+  {:discard false,
+   :domain "api.openai.com",
+   :expires #inst "2024-01-07T14:18:36.000-00:00",
+   :path "/",
+   :secure true,
+   :value
+   "p_.SRyxZVMK_5bFCsCYBndgT_h6GN69tNKHuP2xT4cQ-1704635316-1-ASWwfj6uWf51iluXpEoMZqtS76imiMhoJee9jVGt/lXgwuYfYrHbfAe8am4JVfS4eR9wEMetoKW207qOXyuI31w=",
+   :version 0},
+  "_cfuvid"
+  {:discard true,
+   :domain "api.openai.com",
+   :path "/",
+   :secure true,
+   :value "9qP2ugDUzBfkeAC9feTTOH6Swf7tQmVK3vpDFt3Vlg0-1704635316660-0-604800000",
+   :version 0}},
+ :reason-phrase "OK",
+ :headers
+ {"Server" "cloudflare",
+  "Content-Type" "application/json",
+  "access-control-allow-origin" "*",
+  "alt-svc" "h3=\":443\"; ma=86400",
+  "openai-version" "2020-10-01",
+  "strict-transport-security" "max-age=15724800; includeSubDomains",
+  "openai-processing-ms" "102",
+  "Connection" "close",
+  "Transfer-Encoding" "chunked",
+  "CF-Cache-Status" "DYNAMIC",
+  "CF-RAY" "841ca8c7aaeb71fa-LHR",
+  "Date" "Sun, 07 Jan 2024 13:48:36 GMT",
+  "x-request-id" "4c1f5d13bfa0ebad8454d37fe0460e95"},
+ :orig-content-encoding "gzip",
+ :status 200,
+ :length -1,
+ :body
+ "{\n  \"object\": \"list\",\n  \"data\": [\n    {\n      \"id\": \"text-search-babbage-doc-001\",\n      \"object\": \"model\",\n      \"created\": 1651172509,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"curie-search-query\",\n      \"object\": \"model\",\n      \"created\": 1651172509,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"text-davinci-003\",\n      \"object\": \"model\",\n      \"created\": 1669599635,\n      \"owned_by\": \"openai-internal\"\n    },\n    {\n      \"id\": \"dall-e-3\",\n      \"object\": \"model\",\n      \"created\": 1698785189,\n      \"owned_by\": \"system\"\n    },\n    {\n      \"id\": \"text-search-babbage-query-001\",\n      \"object\": \"model\",\n      \"created\": 1651172509,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"babbage\",\n      \"object\": \"model\",\n      \"created\": 1649358449,\n      \"owned_by\": \"openai\"\n    },\n    {\n      \"id\": \"babbage-search-query\",\n      \"object\": \"model\",\n      \"created\": 1651172509,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"text-babbage-001\",\n      \"object\": \"model\",\n      \"created\": 1649364043,\n      \"owned_by\": \"openai\"\n    },\n    {\n      \"id\": \"text-similarity-davinci-001\",\n      \"object\": \"model\",\n      \"created\": 1651172505,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"davinci-similarity\",\n      \"object\": \"model\",\n      \"created\": 1651172509,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"curie-similarity\",\n      \"object\": \"model\",\n      \"created\": 1651172510,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"babbage-search-document\",\n      \"object\": \"model\",\n      \"created\": 1651172510,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"dall-e-2\",\n      \"object\": \"model\",\n      \"created\": 1698798177,\n      \"owned_by\": \"system\"\n    },\n    {\n      \"id\": \"curie-instruct-beta\",\n      \"object\": \"model\",\n      \"created\": 1649364042,\n      \"owned_by\": \"openai\"\n    },\n    {\n      \"id\": \"text-search-ada-doc-001\",\n      \"object\": \"model\",\n      \"created\": 1651172507,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"gpt-3.5-turbo-0301\",\n      \"object\": \"model\",\n      \"created\": 1677649963,\n      \"owned_by\": \"openai\"\n    },\n    {\n      \"id\": \"davinci-instruct-beta\",\n      \"object\": \"model\",\n      \"created\": 1649364042,\n      \"owned_by\": \"openai\"\n    },\n    {\n      \"id\": \"gpt-3.5-turbo-16k-0613\",\n      \"object\": \"model\",\n      \"created\": 1685474247,\n      \"owned_by\": \"openai\"\n    },\n    {\n      \"id\": \"text-similarity-babbage-001\",\n      \"object\": \"model\",\n      \"created\": 1651172505,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"text-search-davinci-doc-001\",\n      \"object\": \"model\",\n      \"created\": 1651172505,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"babbage-similarity\",\n      \"object\": \"model\",\n      \"created\": 1651172505,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"text-embedding-ada-002\",\n      \"object\": \"model\",\n      \"created\": 1671217299,\n      \"owned_by\": \"openai-internal\"\n    },\n    {\n      \"id\": \"davinci-search-query\",\n      \"object\": \"model\",\n      \"created\": 1651172505,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"text-similarity-curie-001\",\n      \"object\": \"model\",\n      \"created\": 1651172507,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"gpt-3.5-turbo-instruct\",\n      \"object\": \"model\",\n      \"created\": 1692901427,\n      \"owned_by\": \"system\"\n    },\n    {\n      \"id\": \"gpt-3.5-turbo-16k\",\n      \"object\": \"model\",\n      \"created\": 1683758102,\n      \"owned_by\": \"openai-internal\"\n    },\n    {\n      \"id\": \"text-davinci-001\",\n      \"object\": \"model\",\n      \"created\": 1649364042,\n      \"owned_by\": \"openai\"\n    },\n    {\n      \"id\": \"text-search-davinci-query-001\",\n      \"object\": \"model\",\n      \"created\": 1651172505,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"ada-search-document\",\n      \"object\": \"model\",\n      \"created\": 1651172507,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"gpt-3.5-turbo-0613\",\n      \"object\": \"model\",\n      \"created\": 1686587434,\n      \"owned_by\": \"openai\"\n    },\n    {\n      \"id\": \"ada-code-search-code\",\n      \"object\": \"model\",\n      \"created\": 1651172505,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"davinci-002\",\n      \"object\": \"model\",\n      \"created\": 1692634301,\n      \"owned_by\": \"system\"\n    },\n    {\n      \"id\": \"gpt-3.5-turbo-instruct-0914\",\n      \"object\": \"model\",\n      \"created\": 1694122472,\n      \"owned_by\": \"system\"\n    },\n    {\n      \"id\": \"babbage-002\",\n      \"object\": \"model\",\n      \"created\": 1692634615,\n      \"owned_by\": \"system\"\n    },\n    {\n      \"id\": \"davinci-search-document\",\n      \"object\": \"model\",\n      \"created\": 1651172509,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"curie-search-document\",\n      \"object\": \"model\",\n      \"created\": 1651172508,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"babbage-code-search-code\",\n      \"object\": \"model\",\n      \"created\": 1651172509,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"gpt-3.5-turbo\",\n      \"object\": \"model\",\n      \"created\": 1677610602,\n      \"owned_by\": \"openai\"\n    },\n    {\n      \"id\": \"text-search-ada-query-001\",\n      \"object\": \"model\",\n      \"created\": 1651172505,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"code-search-ada-text-001\",\n      \"object\": \"model\",\n      \"created\": 1651172507,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"babbage-code-search-text\",\n      \"object\": \"model\",\n      \"created\": 1651172509,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"code-search-babbage-code-001\",\n      \"object\": \"model\",\n      \"created\": 1651172507,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"ada-search-query\",\n      \"object\": \"model\",\n      \"created\": 1651172505,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"ada-code-search-text\",\n      \"object\": \"model\",\n      \"created\": 1651172510,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"tts-1-hd\",\n      \"object\": \"model\",\n      \"created\": 1699046015,\n      \"owned_by\": \"system\"\n    },\n    {\n      \"id\": \"text-search-curie-query-001\",\n      \"object\": \"model\",\n      \"created\": 1651172509,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"text-davinci-002\",\n      \"object\": \"model\",\n      \"created\": 1649880484,\n      \"owned_by\": \"openai\"\n    },\n    {\n      \"id\": \"code-search-babbage-text-001\",\n      \"object\": \"model\",\n      \"created\": 1651172507,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"ada\",\n      \"object\": \"model\",\n      \"created\": 1649357491,\n      \"owned_by\": \"openai\"\n    },\n    {\n      \"id\": \"text-ada-001\",\n      \"object\": \"model\",\n      \"created\": 1649364042,\n      \"owned_by\": \"openai\"\n    },\n    {\n      \"id\": \"ada-similarity\",\n      \"object\": \"model\",\n      \"created\": 1651172507,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"code-search-ada-code-001\",\n      \"object\": \"model\",\n      \"created\": 1651172507,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"text-similarity-ada-001\",\n      \"object\": \"model\",\n      \"created\": 1651172505,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"text-davinci-edit-001\",\n      \"object\": \"model\",\n      \"created\": 1649809179,\n      \"owned_by\": \"openai\"\n    },\n    {\n      \"id\": \"code-davinci-edit-001\",\n      \"object\": \"model\",\n      \"created\": 1649880484,\n      \"owned_by\": \"openai\"\n    },\n    {\n      \"id\": \"text-search-curie-doc-001\",\n      \"object\": \"model\",\n      \"created\": 1651172509,\n      \"owned_by\": \"openai-dev\"\n    },\n    {\n      \"id\": \"gpt-3.5-turbo-1106\",\n      \"object\": \"model\",\n      \"created\": 1698959748,\n      \"owned_by\": \"system\"\n    },\n    {\n      \"id\": \"text-curie-001\",\n      \"object\": \"model\",\n      \"created\": 1649364043,\n      \"owned_by\": \"openai\"\n    },\n    {\n      \"id\": \"curie\",\n      \"object\": \"model\",\n      \"created\": 1649359874,\n      \"owned_by\": \"openai\"\n    },\n    {\n      \"id\": \"whisper-1\",\n      \"object\": \"model\",\n      \"created\": 1677532384,\n      \"owned_by\": \"openai-internal\"\n    },\n    {\n      \"id\": \"tts-1\",\n      \"object\": \"model\",\n      \"created\": 1681940951,\n      \"owned_by\": \"openai-internal\"\n    },\n    {\n      \"id\": \"davinci\",\n      \"object\": \"model\",\n      \"created\": 1649359874,\n      \"owned_by\": \"openai\"\n    },\n    {\n      \"id\": \"tts-1-1106\",\n      \"object\": \"model\",\n      \"created\": 1699053241,\n      \"owned_by\": \"system\"\n    },\n    {\n      \"id\": \"tts-1-hd-1106\",\n      \"object\": \"model\",\n      \"created\": 1699053533,\n      \"owned_by\": \"system\"\n    }\n  ]\n}\n",
+ :trace-redirects []}
+clj꞉openai.openai-connector꞉> 
+; Evaluating file: openai_connector.clj
+#'openai.openai-connector/create-assistant
+clj꞉openai.openai-connector꞉> 
+#'openai.openai-connector/create-assistant
+clj꞉openai.openai-connector꞉> 
+; Evaluating file: openai_connector.clj
+; Execution error (ExceptionInfo) at clj-http.client/exceptions-response (client.clj:240).
+; clj-http: status 400
+; Evaluation of file openai_connector.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉openai.openai-connector꞉> 
+; Execution error (ExceptionInfo) at clj-http.client/exceptions-response (client.clj:240).
+; clj-http: status 400
+clj꞉openai.openai-connector꞉> 
+; Evaluating file: openai_connector.clj
+; Execution error (ExceptionInfo) at clj-http.client/exceptions-response (client.clj:240).
+; clj-http: status 400
+; Evaluation of file openai_connector.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉openai.openai-connector꞉> 
+; Execution error (ExceptionInfo) at clj-http.client/exceptions-response (client.clj:240).
+; clj-http: status 400
+clj꞉openai.openai-connector꞉> 
+; Evaluating file: openai_connector.clj
+; Execution error (ExceptionInfo) at clj-http.client/exceptions-response (client.clj:240).
+; clj-http: status 400
+; Evaluation of file openai_connector.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉openai.openai-connector꞉> 
+; Execution error (ExceptionInfo) at clj-http.client/exceptions-response (client.clj:240).
+; clj-http: status 400
+clj꞉openai.openai-connector꞉> 
+; Evaluating file: openai_connector.clj
+; Execution error (ExceptionInfo) at clj-http.client/exceptions-response (client.clj:240).
+; clj-http: status 400
+; Evaluation of file openai_connector.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉openai.openai-connector꞉> 
+; Syntax error compiling at (src/openai/openai_connector.clj:36:1).
+; Unable to resolve symbol: try+ in this context
+clj꞉openai.openai-connector꞉> 
+; Evaluating file: openai_connector.clj
+; Execution error (ExceptionInfo) at clj-http.client/exceptions-response (client.clj:240).
+; clj-http: status 400
+; Evaluation of file openai_connector.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉openai.openai-connector꞉> 
+; Execution error (ExceptionInfo) at clj-http.client/exceptions-response (client.clj:240).
+; clj-http: status 400
+clj꞉openai.openai-connector꞉> 
+; Evaluating file: openai_connector.clj
+; Execution error (ExceptionInfo) at clj-http.client/exceptions-response (client.clj:240).
+; clj-http: status 400
+; Evaluation of file openai_connector.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉openai.openai-connector꞉> 
+; Execution error (ExceptionInfo) at clj-http.client/exceptions-response (client.clj:240).
+; clj-http: status 400
+clj꞉openai.openai-connector꞉> 
+; Evaluating file: openai_connector.clj
+; Execution error (ExceptionInfo) at clj-http.client/exceptions-response (client.clj:240).
+; clj-http: status 400
+; Evaluation of file openai_connector.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉openai.openai-connector꞉> 
+; Execution error (ExceptionInfo) at clj-http.client/exceptions-response (client.clj:240).
+; clj-http: status 400
+clj꞉openai.openai-connector꞉> 
+; Evaluating file: openai_connector.clj
+; Execution error (ExceptionInfo) at clj-http.client/exceptions-response (client.clj:240).
+; clj-http: status 400
+; Evaluation of file openai_connector.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉openai.openai-connector꞉> 
+; Evaluating file: openai_connector.clj
+; Execution error (ExceptionInfo) at clj-http.client/exceptions-response (client.clj:240).
+; clj-http: status 400
+; Evaluation of file openai_connector.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉openai.openai-connector꞉> 
+; Execution error (ExceptionInfo) at clj-http.client/exceptions-response (client.clj:240).
+; clj-http: status 400
+clj꞉openai.openai-connector꞉> 
+; Evaluating file: openai_connector.clj
+; Execution error (ExceptionInfo) at clj-http.client/exceptions-response (client.clj:240).
+; clj-http: status 400
+; Evaluation of file openai_connector.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉openai.openai-connector꞉> 
+; Execution error (ExceptionInfo) at clj-http.client/exceptions-response (client.clj:240).
+; clj-http: status 400
+clj꞉openai.openai-connector꞉> 
+; Evaluating file: openai_connector.clj
+; Execution error (ExceptionInfo) at clj-http.client/exceptions-response (client.clj:240).
+; clj-http: status 400
+; Evaluation of file openai_connector.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉openai.openai-connector꞉> 
+; Evaluating file: openai_connector.clj
+; Execution error (ExceptionInfo) at clj-http.client/exceptions-response (client.clj:240).
+; clj-http: status 400
+; Evaluation of file openai_connector.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉openai.openai-connector꞉> 
+; Execution error (ExceptionInfo) at clj-http.client/exceptions-response (client.clj:240).
+; clj-http: status 400
+clj꞉openai.openai-connector꞉> 
+; Evaluating file: openai_connector.clj
+{
+  "object": "list",
+  "data": [
+    {
+      "id": "text-search-babbage-doc-001",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "curie-search-query",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-davinci-003",
+      "object": "model",
+      "created": 1669599635,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "dall-e-3",
+      "object": "model",
+      "created": 1698785189,
+      "owned_by": "system"
+    },
+    {
+      "id": "text-search-babbage-query-001",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage",
+      "object": "model",
+      "created": 1649358449,
+      "owned_by": "openai"
+    },
+    {
+      "id": "babbage-search-query",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-babbage-001",
+      "object": "model",
+      "
+created": 1649364043,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-similarity-davinci-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "davinci-similarity",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "curie-similarity",
+      "object": "model",
+      "created": 1651172510,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage-search-document",
+      "object": "model",
+      "created": 1651172510,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "dall-e-2",
+      "object": "model",
+      "created": 1698798177,
+      "owned_by": "system"
+    },
+    {
+      "id": "curie-instruct-beta",
+      "object": "model",
+      "created": 1649364042,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-search-ada-doc-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo-0301",
+      "object": "model",
+      "created": 1677649963,
+      "owned_by": "openai"
+    },
+    {
+      "id": "davinci-instruct-beta",
+      "object": "model",
+      "created": 1649364042,
+      "owned_by": "openai"
+    },
+    {
+      "id": "gpt-3.5-turbo-16k-0613",
+      "object": "model",
+      "created": 1685474247,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-similarity-babbage-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-search-davinci-doc-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage-similarity",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-embedding-ada-002",
+      "object": "model",
+      "created": 1671217299,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "davinci-search-query",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-similarity-curie-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo-instruct",
+      "object": "model",
+      "created": 1692901427,
+      "owned_by": "system"
+    },
+    {
+      "id": "gpt-3.5-turbo-16k",
+      "object": "model",
+      "created": 1683758102,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "text-davinci-001",
+      "object": "model",
+      "created": 1649364042,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-search-davinci-query-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "ada-search-document",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo-0613",
+      "object": "model",
+      "created": 1686587434,
+      "owned_by": "openai"
+    },
+    {
+      "id": "ada-code-search-code",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "davinci-002",
+      "object": "model",
+      "created": 1692634301,
+      "owned_by": "system"
+    },
+    {
+      "id": "gpt-3.5-turbo-instruct-0914",
+      "object": "model",
+      "created": 1694122472,
+      "owned_by": "system"
+    },
+    {
+      "id": "babbage-002",
+      "object": "model",
+      "created": 1692634615,
+      "owned_by": "system"
+    },
+    {
+      "id": "davinci-search-document",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "curie-search-document",
+      "object": "model",
+      "created": 1651172508,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage-code-search-code",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo",
+      "object": "model",
+      "created": 1677610602,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-search-ada-query-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "code-search-ada-text-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage-code-search-text",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "code-search-babbage-code-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "ada-search-query",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "ada-code-search-text",
+      "object": "model",
+      "created": 1651172510,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "tts-1-hd",
+      "object": "model",
+      "created": 1699046015,
+      "owned_by": "system"
+    },
+    {
+      "id": "text-search-curie-query-001",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-davinci-002",
+      "object": "model",
+      "created": 1649880484,
+      "owned_by": "openai"
+    },
+    {
+      "id": "code-search-babbage-text-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "ada",
+      "object": "model",
+      "created": 1649357491,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-ada-001",
+      "object": "model",
+      "created": 1649364042,
+      "owned_by": "openai"
+    },
+    {
+      "id": "ada-similarity",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "code-search-ada-code-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-similarity-ada-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-davinci-edit-001",
+      "object": "model",
+      "created": 1649809179,
+      "owned_by": "openai"
+    },
+    {
+      "id": "code-davinci-edit-001",
+      "object": "model",
+      "created": 1649880484,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-search-curie-doc-001",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo-1106",
+      "object": "model",
+      "created": 1698959748,
+      "owned_by": "system"
+    },
+    {
+      "id": "text-curie-001",
+      "object": "model",
+      "created": 1649364043,
+      "owned_by": "openai"
+    },
+    {
+      "id": "curie",
+      "object": "model",
+      "created": 1649359874,
+      "owned_by": "openai"
+    },
+    {
+      "id": "whisper-1",
+      "object": "model",
+      "created": 1677532384,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "tts-1",
+      "object": "model",
+      "created": 1681940951,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "davinci",
+      "object": "model",
+      "created": 1649359874,
+      "owned_by": "openai"
+    },
+    {
+      "id": "tts-1-1106",
+      "object": "model",
+      "created": 1699053241,
+      "owned_by": "system"
+    },
+    {
+      "id": "tts-1-hd-1106",
+      "object": "model",
+      "created": 1699053533,
+      "owned_by": "system"
+    }
+  ]
+}
+; Execution error (ExceptionInfo) at clj-http.client/exceptions-response (client.clj:240).
+; clj-http: status 400
+; Evaluation of file openai_connector.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉openai.openai-connector꞉> 
+{
+  "object": "list",
+  "data": [
+    {
+      "id": "text-search-babbage-doc-001",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "curie-search-query",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-davinci-003",
+      "object": "model",
+      "created": 1669599635,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "dall-e-3",
+      "object": "model",
+      "created": 1698785189,
+      "owned_by": "system"
+    },
+    {
+      "id": "text-search-babbage-query-001",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage",
+      "object": "model",
+      "created": 1649358449,
+      "owned_by": "openai"
+    },
+    {
+      "id": "babbage-search-query",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-babbage-001",
+      "object": "model",
+      "
+created": 1649364043,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-similarity-davinci-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "davinci-similarity",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "curie-similarity",
+      "object": "model",
+      "created": 1651172510,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage-search-document",
+      "object": "model",
+      "created": 1651172510,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "dall-e-2",
+      "object": "model",
+      "created": 1698798177,
+      "owned_by": "system"
+    },
+    {
+      "id": "curie-instruct-beta",
+      "object": "model",
+      "created": 1649364042,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-search-ada-doc-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo-0301",
+      "object": "model",
+      "created": 1677649963,
+      "owned_by": "openai"
+    },
+    {
+      "id": "davinci-instruct-beta",
+      "object": "model",
+      "created": 1649364042,
+      "owned_by": "openai"
+    },
+    {
+      "id": "gpt-3.5-turbo-16k-0613",
+      "object": "model",
+      "created": 1685474247,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-similarity-babbage-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-search-davinci-doc-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage-similarity",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-embedding-ada-002",
+      "object": "model",
+      "created": 1671217299,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "davinci-search-query",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-similarity-curie-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo-instruct",
+      "object": "model",
+      "created": 1692901427,
+      "owned_by": "system"
+    },
+    {
+      "id": "gpt-3.5-turbo-16k",
+      "object": "model",
+      "created": 1683758102,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "text-davinci-001",
+      "object": "model",
+      "created": 1649364042,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-search-davinci-query-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "ada-search-document",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo-0613",
+      "object": "model",
+      "created": 1686587434,
+      "owned_by": "openai"
+    },
+    {
+      "id": "ada-code-search-code",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "davinci-002",
+      "object": "model",
+      "created": 1692634301,
+      "owned_by": "system"
+    },
+    {
+      "id": "gpt-3.5-turbo-instruct-0914",
+      "object": "model",
+      "created": 1694122472,
+      "owned_by": "system"
+    },
+    {
+      "id": "babbage-002",
+      "object": "model",
+      "created": 1692634615,
+      "owned_by": "system"
+    },
+    {
+      "id": "davinci-search-document",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "curie-search-document",
+      "object": "model",
+      "created": 1651172508,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage-code-search-code",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo",
+      "object": "model",
+      "created": 1677610602,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-search-ada-query-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "code-search-ada-text-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage-code-search-text",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "code-search-babbage-code-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "ada-search-query",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "ada-code-search-text",
+      "object": "model",
+      "created": 1651172510,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "tts-1-hd",
+      "object": "model",
+      "created": 1699046015,
+      "owned_by": "system"
+    },
+    {
+      "id": "text-search-curie-query-001",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-davinci-002",
+      "object": "model",
+      "created": 1649880484,
+      "owned_by": "openai"
+    },
+    {
+      "id": "code-search-babbage-text-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "ada",
+      "object": "model",
+      "created": 1649357491,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-ada-001",
+      "object": "model",
+      "created": 1649364042,
+      "owned_by": "openai"
+    },
+    {
+      "id": "ada-similarity",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "code-search-ada-code-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-similarity-ada-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-davinci-edit-001",
+      "object": "model",
+      "created": 1649809179,
+      "owned_by": "openai"
+    },
+    {
+      "id": "code-davinci-edit-001",
+      "object": "model",
+      "created": 1649880484,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-search-curie-doc-001",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo-1106",
+      "object": "model",
+      "created": 1698959748,
+      "owned_by": "system"
+    },
+    {
+      "id": "text-curie-001",
+      "object": "model",
+      "created": 1649364043,
+      "owned_by": "openai"
+    },
+    {
+      "id": "curie",
+      "object": "model",
+      "created": 1649359874,
+      "owned_by": "openai"
+    },
+    {
+      "id": "whisper-1",
+      "object": "model",
+      "created": 1677532384,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "tts-1",
+      "object": "model",
+      "created": 1681940951,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "davinci",
+      "object": "model",
+      "created": 1649359874,
+      "owned_by": "openai"
+    },
+    {
+      "id": "tts-1-1106",
+      "object": "model",
+      "created": 1699053241,
+      "owned_by": "system"
+    },
+    {
+      "id": "tts-1-hd-1106",
+      "object": "model",
+      "created": 1699053533,
+      "owned_by": "system"
+    }
+  ]
+}
+nil
+clj꞉openai.openai-connector꞉> 
+; Evaluating file: openai_connector.clj
+; Execution error (ExceptionInfo) at clj-http.client/exceptions-response (client.clj:240).
+; clj-http: status 400
+; Evaluation of file openai_connector.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉openai.openai-connector꞉> 
+#'openai.openai-connector/list-models
+clj꞉openai.openai-connector꞉> 
+#'openai.openai-connector/list-models
+clj꞉openai.openai-connector꞉> 
+; Evaluating file: openai_connector.clj
+{
+  "object": "list",
+  "data": [
+    {
+      "id": "text-search-babbage-doc-001",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "curie-search-query",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-davinci-003",
+      "object": "model",
+      "created": 1669599635,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "dall-e-3",
+      "object": "model",
+      "created": 1698785189,
+      "owned_by": "system"
+    },
+    {
+      "id": "text-search-babbage-query-001",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage",
+      "object": "model",
+      "created": 1649358449,
+      "owned_by": "openai"
+    },
+    {
+      "id": "babbage-search-query",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-babbage-001",
+      "object": "model",
+      "
+created": 1649364043,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-similarity-davinci-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "davinci-similarity",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "curie-similarity",
+      "object": "model",
+      "created": 1651172510,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage-search-document",
+      "object": "model",
+      "created": 1651172510,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "dall-e-2",
+      "object": "model",
+      "created": 1698798177,
+      "owned_by": "system"
+    },
+    {
+      "id": "curie-instruct-beta",
+      "object": "model",
+      "created": 1649364042,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-search-ada-doc-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo-0301",
+      "object": "model",
+      "created": 1677649963,
+      "owned_by": "openai"
+    },
+    {
+      "id": "davinci-instruct-beta",
+      "object": "model",
+      "created": 1649364042,
+      "owned_by": "openai"
+    },
+    {
+      "id": "gpt-3.5-turbo-16k-0613",
+      "object": "model",
+      "created": 1685474247,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-similarity-babbage-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-search-davinci-doc-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage-similarity",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-embedding-ada-002",
+      "object": "model",
+      "created": 1671217299,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "davinci-search-query",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-similarity-curie-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo-instruct",
+      "object": "model",
+      "created": 1692901427,
+      "owned_by": "system"
+    },
+    {
+      "id": "gpt-3.5-turbo-16k",
+      "object": "model",
+      "created": 1683758102,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "text-davinci-001",
+      "object": "model",
+      "created": 1649364042,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-search-davinci-query-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "ada-search-document",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo-0613",
+      "object": "model",
+      "created": 1686587434,
+      "owned_by": "openai"
+    },
+    {
+      "id": "ada-code-search-code",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "davinci-002",
+      "object": "model",
+      "created": 1692634301,
+      "owned_by": "system"
+    },
+    {
+      "id": "gpt-3.5-turbo-instruct-0914",
+      "object": "model",
+      "created": 1694122472,
+      "owned_by": "system"
+    },
+    {
+      "id": "babbage-002",
+      "object": "model",
+      "created": 1692634615,
+      "owned_by": "system"
+    },
+    {
+      "id": "davinci-search-document",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "curie-search-document",
+      "object": "model",
+      "created": 1651172508,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage-code-search-code",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo",
+      "object": "model",
+      "created": 1677610602,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-search-ada-query-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "code-search-ada-text-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage-code-search-text",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "code-search-babbage-code-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "ada-search-query",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "ada-code-search-text",
+      "object": "model",
+      "created": 1651172510,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "tts-1-hd",
+      "object": "model",
+      "created": 1699046015,
+      "owned_by": "system"
+    },
+    {
+      "id": "text-search-curie-query-001",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-davinci-002",
+      "object": "model",
+      "created": 1649880484,
+      "owned_by": "openai"
+    },
+    {
+      "id": "code-search-babbage-text-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "ada",
+      "object": "model",
+      "created": 1649357491,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-ada-001",
+      "object": "model",
+      "created": 1649364042,
+      "owned_by": "openai"
+    },
+    {
+      "id": "ada-similarity",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "code-search-ada-code-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-similarity-ada-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-davinci-edit-001",
+      "object": "model",
+      "created": 1649809179,
+      "owned_by": "openai"
+    },
+    {
+      "id": "code-davinci-edit-001",
+      "object": "model",
+      "created": 1649880484,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-search-curie-doc-001",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo-1106",
+      "object": "model",
+      "created": 1698959748,
+      "owned_by": "system"
+    },
+    {
+      "id": "text-curie-001",
+      "object": "model",
+      "created": 1649364043,
+      "owned_by": "openai"
+    },
+    {
+      "id": "curie",
+      "object": "model",
+      "created": 1649359874,
+      "owned_by": "openai"
+    },
+    {
+      "id": "whisper-1",
+      "object": "model",
+      "created": 1677532384,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "tts-1",
+      "object": "model",
+      "created": 1681940951,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "davinci",
+      "object": "model",
+      "created": 1649359874,
+      "owned_by": "openai"
+    },
+    {
+      "id": "tts-1-1106",
+      "object": "model",
+      "created": 1699053241,
+      "owned_by": "system"
+    },
+    {
+      "id": "tts-1-hd-1106",
+      "object": "model",
+      "created": 1699053533,
+      "owned_by": "system"
+    }
+  ]
+}
+; Execution error (ExceptionInfo) at clj-http.client/exceptions-response (client.clj:240).
+; clj-http: status 400
+; Evaluation of file openai_connector.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉openai.openai-connector꞉> 
+{
+  "object": "list",
+  "data": [
+    {
+      "id": "text-search-babbage-doc-001",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "curie-search-query",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-davinci-003",
+      "object": "model",
+      "created": 1669599635,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "dall-e-3",
+      "object": "model",
+      "created": 1698785189,
+      "owned_by": "system"
+    },
+    {
+      "id": "text-search-babbage-query-001",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage",
+      "object": "model",
+      "created": 1649358449,
+      "owned_by": "openai"
+    },
+    {
+      "id": "babbage-search-query",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-babbage-001",
+      "object": "model",
+      "
+created": 1649364043,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-similarity-davinci-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "davinci-similarity",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "curie-similarity",
+      "object": "model",
+      "created": 1651172510,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage-search-document",
+      "object": "model",
+      "created": 1651172510,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "dall-e-2",
+      "object": "model",
+      "created": 1698798177,
+      "owned_by": "system"
+    },
+    {
+      "id": "curie-instruct-beta",
+      "object": "model",
+      "created": 1649364042,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-search-ada-doc-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo-0301",
+      "object": "model",
+      "created": 1677649963,
+      "owned_by": "openai"
+    },
+    {
+      "id": "davinci-instruct-beta",
+      "object": "model",
+      "created": 1649364042,
+      "owned_by": "openai"
+    },
+    {
+      "id": "gpt-3.5-turbo-16k-0613",
+      "object": "model",
+      "created": 1685474247,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-similarity-babbage-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-search-davinci-doc-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage-similarity",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-embedding-ada-002",
+      "object": "model",
+      "created": 1671217299,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "davinci-search-query",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-similarity-curie-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo-instruct",
+      "object": "model",
+      "created": 1692901427,
+      "owned_by": "system"
+    },
+    {
+      "id": "gpt-3.5-turbo-16k",
+      "object": "model",
+      "created": 1683758102,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "text-davinci-001",
+      "object": "model",
+      "created": 1649364042,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-search-davinci-query-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "ada-search-document",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo-0613",
+      "object": "model",
+      "created": 1686587434,
+      "owned_by": "openai"
+    },
+    {
+      "id": "ada-code-search-code",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "davinci-002",
+      "object": "model",
+      "created": 1692634301,
+      "owned_by": "system"
+    },
+    {
+      "id": "gpt-3.5-turbo-instruct-0914",
+      "object": "model",
+      "created": 1694122472,
+      "owned_by": "system"
+    },
+    {
+      "id": "babbage-002",
+      "object": "model",
+      "created": 1692634615,
+      "owned_by": "system"
+    },
+    {
+      "id": "davinci-search-document",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "curie-search-document",
+      "object": "model",
+      "created": 1651172508,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage-code-search-code",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo",
+      "object": "model",
+      "created": 1677610602,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-search-ada-query-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "code-search-ada-text-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage-code-search-text",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "code-search-babbage-code-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "ada-search-query",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "ada-code-search-text",
+      "object": "model",
+      "created": 1651172510,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "tts-1-hd",
+      "object": "model",
+      "created": 1699046015,
+      "owned_by": "system"
+    },
+    {
+      "id": "text-search-curie-query-001",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-davinci-002",
+      "object": "model",
+      "created": 1649880484,
+      "owned_by": "openai"
+    },
+    {
+      "id": "code-search-babbage-text-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "ada",
+      "object": "model",
+      "created": 1649357491,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-ada-001",
+      "object": "model",
+      "created": 1649364042,
+      "owned_by": "openai"
+    },
+    {
+      "id": "ada-similarity",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "code-search-ada-code-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-similarity-ada-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-davinci-edit-001",
+      "object": "model",
+      "created": 1649809179,
+      "owned_by": "openai"
+    },
+    {
+      "id": "code-davinci-edit-001",
+      "object": "model",
+      "created": 1649880484,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-search-curie-doc-001",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo-1106",
+      "object": "model",
+      "created": 1698959748,
+      "owned_by": "system"
+    },
+    {
+      "id": "text-curie-001",
+      "object": "model",
+      "created": 1649364043,
+      "owned_by": "openai"
+    },
+    {
+      "id": "curie",
+      "object": "model",
+      "created": 1649359874,
+      "owned_by": "openai"
+    },
+    {
+      "id": "whisper-1",
+      "object": "model",
+      "created": 1677532384,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "tts-1",
+      "object": "model",
+      "created": 1681940951,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "davinci",
+      "object": "model",
+      "created": 1649359874,
+      "owned_by": "openai"
+    },
+    {
+      "id": "tts-1-1106",
+      "object": "model",
+      "created": 1699053241,
+      "owned_by": "system"
+    },
+    {
+      "id": "tts-1-hd-1106",
+      "object": "model",
+      "created": 1699053533,
+      "owned_by": "system"
+    }
+  ]
+}
+nil
+clj꞉openai.openai-connector꞉> 
+; Evaluating file: openai_connector.clj
+{
+  "object": "list",
+  "data": [
+    {
+      "id": "text-search-babbage-doc-001",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "curie-search-query",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-davinci-003",
+      "object": "model",
+      "created": 1669599635,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "dall-e-3",
+      "object": "model",
+      "created": 1698785189,
+      "owned_by": "system"
+    },
+    {
+      "id": "text-search-babbage-query-001",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage",
+      "object": "model",
+      "created": 1649358449,
+      "owned_by": "openai"
+    },
+    {
+      "id": "babbage-search-query",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-babbage-001",
+      "object": "model",
+      "
+created": 1649364043,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-similarity-davinci-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "davinci-similarity",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "curie-similarity",
+      "object": "model",
+      "created": 1651172510,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage-search-document",
+      "object": "model",
+      "created": 1651172510,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "dall-e-2",
+      "object": "model",
+      "created": 1698798177,
+      "owned_by": "system"
+    },
+    {
+      "id": "curie-instruct-beta",
+      "object": "model",
+      "created": 1649364042,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-search-ada-doc-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo-0301",
+      "object": "model",
+      "created": 1677649963,
+      "owned_by": "openai"
+    },
+    {
+      "id": "davinci-instruct-beta",
+      "object": "model",
+      "created": 1649364042,
+      "owned_by": "openai"
+    },
+    {
+      "id": "gpt-3.5-turbo-16k-0613",
+      "object": "model",
+      "created": 1685474247,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-similarity-babbage-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-search-davinci-doc-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage-similarity",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-embedding-ada-002",
+      "object": "model",
+      "created": 1671217299,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "davinci-search-query",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-similarity-curie-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo-instruct",
+      "object": "model",
+      "created": 1692901427,
+      "owned_by": "system"
+    },
+    {
+      "id": "gpt-3.5-turbo-16k",
+      "object": "model",
+      "created": 1683758102,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "text-davinci-001",
+      "object": "model",
+      "created": 1649364042,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-search-davinci-query-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "ada-search-document",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo-0613",
+      "object": "model",
+      "created": 1686587434,
+      "owned_by": "openai"
+    },
+    {
+      "id": "ada-code-search-code",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "davinci-002",
+      "object": "model",
+      "created": 1692634301,
+      "owned_by": "system"
+    },
+    {
+      "id": "gpt-3.5-turbo-instruct-0914",
+      "object": "model",
+      "created": 1694122472,
+      "owned_by": "system"
+    },
+    {
+      "id": "babbage-002",
+      "object": "model",
+      "created": 1692634615,
+      "owned_by": "system"
+    },
+    {
+      "id": "davinci-search-document",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "curie-search-document",
+      "object": "model",
+      "created": 1651172508,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage-code-search-code",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo",
+      "object": "model",
+      "created": 1677610602,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-search-ada-query-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "code-search-ada-text-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage-code-search-text",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "code-search-babbage-code-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "ada-search-query",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "ada-code-search-text",
+      "object": "model",
+      "created": 1651172510,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "tts-1-hd",
+      "object": "model",
+      "created": 1699046015,
+      "owned_by": "system"
+    },
+    {
+      "id": "text-search-curie-query-001",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-davinci-002",
+      "object": "model",
+      "created": 1649880484,
+      "owned_by": "openai"
+    },
+    {
+      "id": "code-search-babbage-text-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "ada",
+      "object": "model",
+      "created": 1649357491,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-ada-001",
+      "object": "model",
+      "created": 1649364042,
+      "owned_by": "openai"
+    },
+    {
+      "id": "ada-similarity",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "code-search-ada-code-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-similarity-ada-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-davinci-edit-001",
+      "object": "model",
+      "created": 1649809179,
+      "owned_by": "openai"
+    },
+    {
+      "id": "code-davinci-edit-001",
+      "object": "model",
+      "created": 1649880484,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-search-curie-doc-001",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo-1106",
+      "object": "model",
+      "created": 1698959748,
+      "owned_by": "system"
+    },
+    {
+      "id": "text-curie-001",
+      "object": "model",
+      "created": 1649364043,
+      "owned_by": "openai"
+    },
+    {
+      "id": "curie",
+      "object": "model",
+      "created": 1649359874,
+      "owned_by": "openai"
+    },
+    {
+      "id": "whisper-1",
+      "object": "model",
+      "created": 1677532384,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "tts-1",
+      "object": "model",
+      "created": 1681940951,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "davinci",
+      "object": "model",
+      "created": 1649359874,
+      "owned_by": "openai"
+    },
+    {
+      "id": "tts-1-1106",
+      "object": "model",
+      "created": 1699053241,
+      "owned_by": "system"
+    },
+    {
+      "id": "tts-1-hd-1106",
+      "object": "model",
+      "created": 1699053533,
+      "owned_by": "system"
+    }
+  ]
+}
+; Execution error (ExceptionInfo) at clj-http.client/exceptions-response (client.clj:240).
+; clj-http: status 400
+; Evaluation of file openai_connector.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉openai.openai-connector꞉> 
+; Execution error (ExceptionInfo) at clj-http.client/exceptions-response (client.clj:240).
+; clj-http: status 400
+clj꞉openai.openai-connector꞉> 
+; Evaluating file: openai_connector.clj
+{
+  "object": "list",
+  "data": [
+    {
+      "id": "text-search-babbage-doc-001",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "curie-search-query",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-davinci-003",
+      "object": "model",
+      "created": 1669599635,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "dall-e-3",
+      "object": "model",
+      "created": 1698785189,
+      "owned_by": "system"
+    },
+    {
+      "id": "text-search-babbage-query-001",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage",
+      "object": "model",
+      "created": 1649358449,
+      "owned_by": "openai"
+    },
+    {
+      "id": "babbage-search-query",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-babbage-001",
+      "object": "model",
+      "
+created": 1649364043,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-similarity-davinci-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "davinci-similarity",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "curie-similarity",
+      "object": "model",
+      "created": 1651172510,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage-search-document",
+      "object": "model",
+      "created": 1651172510,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "dall-e-2",
+      "object": "model",
+      "created": 1698798177,
+      "owned_by": "system"
+    },
+    {
+      "id": "curie-instruct-beta",
+      "object": "model",
+      "created": 1649364042,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-search-ada-doc-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo-0301",
+      "object": "model",
+      "created": 1677649963,
+      "owned_by": "openai"
+    },
+    {
+      "id": "davinci-instruct-beta",
+      "object": "model",
+      "created": 1649364042,
+      "owned_by": "openai"
+    },
+    {
+      "id": "gpt-3.5-turbo-16k-0613",
+      "object": "model",
+      "created": 1685474247,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-similarity-babbage-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-search-davinci-doc-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage-similarity",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-embedding-ada-002",
+      "object": "model",
+      "created": 1671217299,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "davinci-search-query",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-similarity-curie-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo-instruct",
+      "object": "model",
+      "created": 1692901427,
+      "owned_by": "system"
+    },
+    {
+      "id": "gpt-3.5-turbo-16k",
+      "object": "model",
+      "created": 1683758102,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "text-davinci-001",
+      "object": "model",
+      "created": 1649364042,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-search-davinci-query-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "ada-search-document",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo-0613",
+      "object": "model",
+      "created": 1686587434,
+      "owned_by": "openai"
+    },
+    {
+      "id": "ada-code-search-code",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "davinci-002",
+      "object": "model",
+      "created": 1692634301,
+      "owned_by": "system"
+    },
+    {
+      "id": "gpt-3.5-turbo-instruct-0914",
+      "object": "model",
+      "created": 1694122472,
+      "owned_by": "system"
+    },
+    {
+      "id": "babbage-002",
+      "object": "model",
+      "created": 1692634615,
+      "owned_by": "system"
+    },
+    {
+      "id": "davinci-search-document",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "curie-search-document",
+      "object": "model",
+      "created": 1651172508,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage-code-search-code",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo",
+      "object": "model",
+      "created": 1677610602,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-search-ada-query-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "code-search-ada-text-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage-code-search-text",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "code-search-babbage-code-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "ada-search-query",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "ada-code-search-text",
+      "object": "model",
+      "created": 1651172510,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "tts-1-hd",
+      "object": "model",
+      "created": 1699046015,
+      "owned_by": "system"
+    },
+    {
+      "id": "text-search-curie-query-001",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-davinci-002",
+      "object": "model",
+      "created": 1649880484,
+      "owned_by": "openai"
+    },
+    {
+      "id": "code-search-babbage-text-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "ada",
+      "object": "model",
+      "created": 1649357491,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-ada-001",
+      "object": "model",
+      "created": 1649364042,
+      "owned_by": "openai"
+    },
+    {
+      "id": "ada-similarity",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "code-search-ada-code-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-similarity-ada-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-davinci-edit-001",
+      "object": "model",
+      "created": 1649809179,
+      "owned_by": "openai"
+    },
+    {
+      "id": "code-davinci-edit-001",
+      "object": "model",
+      "created": 1649880484,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-search-curie-doc-001",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo-1106",
+      "object": "model",
+      "created": 1698959748,
+      "owned_by": "system"
+    },
+    {
+      "id": "text-curie-001",
+      "object": "model",
+      "created": 1649364043,
+      "owned_by": "openai"
+    },
+    {
+      "id": "curie",
+      "object": "model",
+      "created": 1649359874,
+      "owned_by": "openai"
+    },
+    {
+      "id": "whisper-1",
+      "object": "model",
+      "created": 1677532384,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "tts-1",
+      "object": "model",
+      "created": 1681940951,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "davinci",
+      "object": "model",
+      "created": 1649359874,
+      "owned_by": "openai"
+    },
+    {
+      "id": "tts-1-1106",
+      "object": "model",
+      "created": 1699053241,
+      "owned_by": "system"
+    },
+    {
+      "id": "tts-1-hd-1106",
+      "object": "model",
+      "created": 1699053533,
+      "owned_by": "system"
+    }
+  ]
+}
+
+; Syntax error reading source at (src/openai/openai_connector.clj:31:87).
+; Invalid token: :
+; Evaluation of file openai_connector.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉openai.openai-connector꞉> 
+"{\"foo\":\"bar\",\"baz\":5}"
+clj꞉openai.openai-connector꞉> 
+; Evaluating file: openai_connector.clj
+{
+  "object": "list",
+  "data": [
+    {
+      "id": "text-search-babbage-doc-001",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "curie-search-query",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-davinci-003",
+      "object": "model",
+      "created": 1669599635,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "dall-e-3",
+      "object": "model",
+      "created": 1698785189,
+      "owned_by": "system"
+    },
+    {
+      "id": "text-search-babbage-query-001",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage",
+      "object": "model",
+      "created": 1649358449,
+      "owned_by": "openai"
+    },
+    {
+      "id": "babbage-search-query",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-babbage-001",
+      "object": "model",
+      "
+created": 1649364043,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-similarity-davinci-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "davinci-similarity",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "curie-similarity",
+      "object": "model",
+      "created": 1651172510,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage-search-document",
+      "object": "model",
+      "created": 1651172510,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "dall-e-2",
+      "object": "model",
+      "created": 1698798177,
+      "owned_by": "system"
+    },
+    {
+      "id": "curie-instruct-beta",
+      "object": "model",
+      "created": 1649364042,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-search-ada-doc-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo-0301",
+      "object": "model",
+      "created": 1677649963,
+      "owned_by": "openai"
+    },
+    {
+      "id": "davinci-instruct-beta",
+      "object": "model",
+      "created": 1649364042,
+      "owned_by": "openai"
+    },
+    {
+      "id": "gpt-3.5-turbo-16k-0613",
+      "object": "model",
+      "created": 1685474247,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-similarity-babbage-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-search-davinci-doc-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage-similarity",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-embedding-ada-002",
+      "object": "model",
+      "created": 1671217299,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "davinci-search-query",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-similarity-curie-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo-instruct",
+      "object": "model",
+      "created": 1692901427,
+      "owned_by": "system"
+    },
+    {
+      "id": "gpt-3.5-turbo-16k",
+      "object": "model",
+      "created": 1683758102,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "text-davinci-001",
+      "object": "model",
+      "created": 1649364042,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-search-davinci-query-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "ada-search-document",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo-0613",
+      "object": "model",
+      "created": 1686587434,
+      "owned_by": "openai"
+    },
+    {
+      "id": "ada-code-search-code",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "davinci-002",
+      "object": "model",
+      "created": 1692634301,
+      "owned_by": "system"
+    },
+    {
+      "id": "gpt-3.5-turbo-instruct-0914",
+      "object": "model",
+      "created": 1694122472,
+      "owned_by": "system"
+    },
+    {
+      "id": "babbage-002",
+      "object": "model",
+      "created": 1692634615,
+      "owned_by": "system"
+    },
+    {
+      "id": "davinci-search-document",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "curie-search-document",
+      "object": "model",
+      "created": 1651172508,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage-code-search-code",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo",
+      "object": "model",
+      "created": 1677610602,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-search-ada-query-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "code-search-ada-text-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage-code-search-text",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "code-search-babbage-code-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "ada-search-query",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "ada-code-search-text",
+      "object": "model",
+      "created": 1651172510,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "tts-1-hd",
+      "object": "model",
+      "created": 1699046015,
+      "owned_by": "system"
+    },
+    {
+      "id": "text-search-curie-query-001",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-davinci-002",
+      "object": "model",
+      "created": 1649880484,
+      "owned_by": "openai"
+    },
+    {
+      "id": "code-search-babbage-text-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "ada",
+      "object": "model",
+      "created": 1649357491,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-ada-001",
+      "object": "model",
+      "created": 1649364042,
+      "owned_by": "openai"
+    },
+    {
+      "id": "ada-similarity",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "code-search-ada-code-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-similarity-ada-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-davinci-edit-001",
+      "object": "model",
+      "created": 1649809179,
+      "owned_by": "openai"
+    },
+    {
+      "id": "code-davinci-edit-001",
+      "object": "model",
+      "created": 1649880484,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-search-curie-doc-001",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo-1106",
+      "object": "model",
+      "created": 1698959748,
+      "owned_by": "system"
+    },
+    {
+      "id": "text-curie-001",
+      "object": "model",
+      "created": 1649364043,
+      "owned_by": "openai"
+    },
+    {
+      "id": "curie",
+      "object": "model",
+      "created": 1649359874,
+      "owned_by": "openai"
+    },
+    {
+      "id": "whisper-1",
+      "object": "model",
+      "created": 1677532384,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "tts-1",
+      "object": "model",
+      "created": 1681940951,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "davinci",
+      "object": "model",
+      "created": 1649359874,
+      "owned_by": "openai"
+    },
+    {
+      "id": "tts-1-1106",
+      "object": "model",
+      "created": 1699053241,
+      "owned_by": "system"
+    },
+    {
+      "id": "tts-1-hd-1106",
+      "object": "model",
+      "created": 1699053533,
+      "owned_by": "system"
+    }
+  ]
+}
+; Execution error (ExceptionInfo) at clj-http.client/exceptions-response (client.clj:240).
+; clj-http: status 400
+; Evaluation of file openai_connector.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉openai.openai-connector꞉> 
+; Execution error (ExceptionInfo) at clj-http.client/exceptions-response (client.clj:240).
+; clj-http: status 400
+clj꞉openai.openai-connector꞉> 
+; Evaluating file: openai_connector.clj
+{
+  "object": "list",
+  "data": [
+    {
+      "id": "text-search-babbage-doc-001",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "curie-search-query",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-davinci-003",
+      "object": "model",
+      "created": 1669599635,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "dall-e-3",
+      "object": "model",
+      "created": 1698785189,
+      "owned_by": "system"
+    },
+    {
+      "id": "text-search-babbage-query-001",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage",
+      "object": "model",
+      "created": 1649358449,
+      "owned_by": "openai"
+    },
+    {
+      "id": "babbage-search-query",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-babbage-001",
+      "object": "model",
+      "
+created": 1649364043,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-similarity-davinci-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "davinci-similarity",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "curie-similarity",
+      "object": "model",
+      "created": 1651172510,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage-search-document",
+      "object": "model",
+      "created": 1651172510,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "dall-e-2",
+      "object": "model",
+      "created": 1698798177,
+      "owned_by": "system"
+    },
+    {
+      "id": "curie-instruct-beta",
+      "object": "model",
+      "created": 1649364042,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-search-ada-doc-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo-0301",
+      "object": "model",
+      "created": 1677649963,
+      "owned_by": "openai"
+    },
+    {
+      "id": "davinci-instruct-beta",
+      "object": "model",
+      "created": 1649364042,
+      "owned_by": "openai"
+    },
+    {
+      "id": "gpt-3.5-turbo-16k-0613",
+      "object": "model",
+      "created": 1685474247,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-similarity-babbage-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-search-davinci-doc-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage-similarity",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-embedding-ada-002",
+      "object": "model",
+      "created": 1671217299,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "davinci-search-query",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-similarity-curie-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo-instruct",
+      "object": "model",
+      "created": 1692901427,
+      "owned_by": "system"
+    },
+    {
+      "id": "gpt-3.5-turbo-16k",
+      "object": "model",
+      "created": 1683758102,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "text-davinci-001",
+      "object": "model",
+      "created": 1649364042,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-search-davinci-query-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "ada-search-document",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo-0613",
+      "object": "model",
+      "created": 1686587434,
+      "owned_by": "openai"
+    },
+    {
+      "id": "ada-code-search-code",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "davinci-002",
+      "object": "model",
+      "created": 1692634301,
+      "owned_by": "system"
+    },
+    {
+      "id": "gpt-3.5-turbo-instruct-0914",
+      "object": "model",
+      "created": 1694122472,
+      "owned_by": "system"
+    },
+    {
+      "id": "babbage-002",
+      "object": "model",
+      "created": 1692634615,
+      "owned_by": "system"
+    },
+    {
+      "id": "davinci-search-document",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "curie-search-document",
+      "object": "model",
+      "created": 1651172508,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage-code-search-code",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo",
+      "object": "model",
+      "created": 1677610602,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-search-ada-query-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "code-search-ada-text-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage-code-search-text",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "code-search-babbage-code-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "ada-search-query",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "ada-code-search-text",
+      "object": "model",
+      "created": 1651172510,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "tts-1-hd",
+      "object": "model",
+      "created": 1699046015,
+      "owned_by": "system"
+    },
+    {
+      "id": "text-search-curie-query-001",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-davinci-002",
+      "object": "model",
+      "created": 1649880484,
+      "owned_by": "openai"
+    },
+    {
+      "id": "code-search-babbage-text-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "ada",
+      "object": "model",
+      "created": 1649357491,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-ada-001",
+      "object": "model",
+      "created": 1649364042,
+      "owned_by": "openai"
+    },
+    {
+      "id": "ada-similarity",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "code-search-ada-code-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-similarity-ada-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-davinci-edit-001",
+      "object": "model",
+      "created": 1649809179,
+      "owned_by": "openai"
+    },
+    {
+      "id": "code-davinci-edit-001",
+      "object": "model",
+      "created": 1649880484,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-search-curie-doc-001",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo-1106",
+      "object": "model",
+      "created": 1698959748,
+      "owned_by": "system"
+    },
+    {
+      "id": "text-curie-001",
+      "object": "model",
+      "created": 1649364043,
+      "owned_by": "openai"
+    },
+    {
+      "id": "curie",
+      "object": "model",
+      "created": 1649359874,
+      "owned_by": "openai"
+    },
+    {
+      "id": "whisper-1",
+      "object": "model",
+      "created": 1677532384,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "tts-1",
+      "object": "model",
+      "created": 1681940951,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "davinci",
+      "object": "model",
+      "created": 1649359874,
+      "owned_by": "openai"
+    },
+    {
+      "id": "tts-1-1106",
+      "object": "model",
+      "created": 1699053241,
+      "owned_by": "system"
+    },
+    {
+      "id": "tts-1-hd-1106",
+      "object": "model",
+      "created": 1699053533,
+      "owned_by": "system"
+    }
+  ]
+}
+; Execution error (ExceptionInfo) at clj-http.client/exceptions-response (client.clj:240).
+; clj-http: status 400
+; Evaluation of file openai_connector.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉openai.openai-connector꞉> 
+; Execution error (ExceptionInfo) at clj-http.client/exceptions-response (client.clj:240).
+; clj-http: status 400
+clj꞉openai.openai-connector꞉> 
+; Execution error (ExceptionInfo) at clj-http.client/exceptions-response (client.clj:240).
+; clj-http: status 400
+clj꞉openai.openai-connector꞉> 
+; Evaluating file: openai_connector.clj
+{
+  "object": "list",
+  "data": [
+    {
+      "id": "text-search-babbage-doc-001",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "curie-search-query",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-davinci-003",
+      "object": "model",
+      "created": 1669599635,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "dall-e-3",
+      "object": "model",
+      "created": 1698785189,
+      "owned_by": "system"
+    },
+    {
+      "id": "text-search-babbage-query-001",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage",
+      "object": "model",
+      "created": 1649358449,
+      "owned_by": "openai"
+    },
+    {
+      "id": "babbage-search-query",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-babbage-001",
+      "object": "model",
+      "
+created": 1649364043,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-similarity-davinci-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "davinci-similarity",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "curie-similarity",
+      "object": "model",
+      "created": 1651172510,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage-search-document",
+      "object": "model",
+      "created": 1651172510,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "dall-e-2",
+      "object": "model",
+      "created": 1698798177,
+      "owned_by": "system"
+    },
+    {
+      "id": "curie-instruct-beta",
+      "object": "model",
+      "created": 1649364042,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-search-ada-doc-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo-0301",
+      "object": "model",
+      "created": 1677649963,
+      "owned_by": "openai"
+    },
+    {
+      "id": "davinci-instruct-beta",
+      "object": "model",
+      "created": 1649364042,
+      "owned_by": "openai"
+    },
+    {
+      "id": "gpt-3.5-turbo-16k-0613",
+      "object": "model",
+      "created": 1685474247,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-similarity-babbage-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-search-davinci-doc-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage-similarity",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-embedding-ada-002",
+      "object": "model",
+      "created": 1671217299,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "davinci-search-query",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-similarity-curie-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo-instruct",
+      "object": "model",
+      "created": 1692901427,
+      "owned_by": "system"
+    },
+    {
+      "id": "gpt-3.5-turbo-16k",
+      "object": "model",
+      "created": 1683758102,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "text-davinci-001",
+      "object": "model",
+      "created": 1649364042,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-search-davinci-query-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "ada-search-document",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo-0613",
+      "object": "model",
+      "created": 1686587434,
+      "owned_by": "openai"
+    },
+    {
+      "id": "ada-code-search-code",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "davinci-002",
+      "object": "model",
+      "created": 1692634301,
+      "owned_by": "system"
+    },
+    {
+      "id": "gpt-3.5-turbo-instruct-0914",
+      "object": "model",
+      "created": 1694122472,
+      "owned_by": "system"
+    },
+    {
+      "id": "babbage-002",
+      "object": "model",
+      "created": 1692634615,
+      "owned_by": "system"
+    },
+    {
+      "id": "davinci-search-document",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "curie-search-document",
+      "object": "model",
+      "created": 1651172508,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage-code-search-code",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo",
+      "object": "model",
+      "created": 1677610602,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-search-ada-query-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "code-search-ada-text-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage-code-search-text",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "code-search-babbage-code-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "ada-search-query",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "ada-code-search-text",
+      "object": "model",
+      "created": 1651172510,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "tts-1-hd",
+      "object": "model",
+      "created": 1699046015,
+      "owned_by": "system"
+    },
+    {
+      "id": "text-search-curie-query-001",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-davinci-002",
+      "object": "model",
+      "created": 1649880484,
+      "owned_by": "openai"
+    },
+    {
+      "id": "code-search-babbage-text-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "ada",
+      "object": "model",
+      "created": 1649357491,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-ada-001",
+      "object": "model",
+      "created": 1649364042,
+      "owned_by": "openai"
+    },
+    {
+      "id": "ada-similarity",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "code-search-ada-code-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-similarity-ada-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-davinci-edit-001",
+      "object": "model",
+      "created": 1649809179,
+      "owned_by": "openai"
+    },
+    {
+      "id": "code-davinci-edit-001",
+      "object": "model",
+      "created": 1649880484,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-search-curie-doc-001",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo-1106",
+      "object": "model",
+      "created": 1698959748,
+      "owned_by": "system"
+    },
+    {
+      "id": "text-curie-001",
+      "object": "model",
+      "created": 1649364043,
+      "owned_by": "openai"
+    },
+    {
+      "id": "curie",
+      "object": "model",
+      "created": 1649359874,
+      "owned_by": "openai"
+    },
+    {
+      "id": "whisper-1",
+      "object": "model",
+      "created": 1677532384,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "tts-1",
+      "object": "model",
+      "created": 1681940951,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "davinci",
+      "object": "model",
+      "created": 1649359874,
+      "owned_by": "openai"
+    },
+    {
+      "id": "tts-1-1106",
+      "object": "model",
+      "created": 1699053241,
+      "owned_by": "system"
+    },
+    {
+      "id": "tts-1-hd-1106",
+      "object": "model",
+      "created": 1699053533,
+      "owned_by": "system"
+    }
+  ]
+}
+; Execution error (ExceptionInfo) at clj-http.client/exceptions-response (client.clj:240).
+; clj-http: status 400
+; Evaluation of file openai_connector.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉openai.openai-connector꞉> 
+; Execution error (ExceptionInfo) at clj-http.client/exceptions-response (client.clj:240).
+; clj-http: status 400
+clj꞉openai.openai-connector꞉> 
+; Evaluating file: openai_connector.clj
+{
+  "object": "list",
+  "data": [
+    {
+      "id": "text-search-babbage-doc-001",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "curie-search-query",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-davinci-003",
+      "object": "model",
+      "created": 1669599635,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "dall-e-3",
+      "object": "model",
+      "created": 1698785189,
+      "owned_by": "system"
+    },
+    {
+      "id": "text-search-babbage-query-001",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage",
+      "object": "model",
+      "created": 1649358449,
+      "owned_by": "openai"
+    },
+    {
+      "id": "babbage-search-query",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-babbage-001",
+      "object": "model",
+      "
+created": 1649364043,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-similarity-davinci-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "davinci-similarity",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "curie-similarity",
+      "object": "model",
+      "created": 1651172510,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage-search-document",
+      "object": "model",
+      "created": 1651172510,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "dall-e-2",
+      "object": "model",
+      "created": 1698798177,
+      "owned_by": "system"
+    },
+    {
+      "id": "curie-instruct-beta",
+      "object": "model",
+      "created": 1649364042,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-search-ada-doc-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo-0301",
+      "object": "model",
+      "created": 1677649963,
+      "owned_by": "openai"
+    },
+    {
+      "id": "davinci-instruct-beta",
+      "object": "model",
+      "created": 1649364042,
+      "owned_by": "openai"
+    },
+    {
+      "id": "gpt-3.5-turbo-16k-0613",
+      "object": "model",
+      "created": 1685474247,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-similarity-babbage-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-search-davinci-doc-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage-similarity",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-embedding-ada-002",
+      "object": "model",
+      "created": 1671217299,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "davinci-search-query",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-similarity-curie-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo-instruct",
+      "object": "model",
+      "created": 1692901427,
+      "owned_by": "system"
+    },
+    {
+      "id": "gpt-3.5-turbo-16k",
+      "object": "model",
+      "created": 1683758102,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "text-davinci-001",
+      "object": "model",
+      "created": 1649364042,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-search-davinci-query-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "ada-search-document",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo-0613",
+      "object": "model",
+      "created": 1686587434,
+      "owned_by": "openai"
+    },
+    {
+      "id": "ada-code-search-code",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "davinci-002",
+      "object": "model",
+      "created": 1692634301,
+      "owned_by": "system"
+    },
+    {
+      "id": "gpt-3.5-turbo-instruct-0914",
+      "object": "model",
+      "created": 1694122472,
+      "owned_by": "system"
+    },
+    {
+      "id": "babbage-002",
+      "object": "model",
+      "created": 1692634615,
+      "owned_by": "system"
+    },
+    {
+      "id": "davinci-search-document",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "curie-search-document",
+      "object": "model",
+      "created": 1651172508,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage-code-search-code",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo",
+      "object": "model",
+      "created": 1677610602,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-search-ada-query-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "code-search-ada-text-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage-code-search-text",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "code-search-babbage-code-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "ada-search-query",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "ada-code-search-text",
+      "object": "model",
+      "created": 1651172510,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "tts-1-hd",
+      "object": "model",
+      "created": 1699046015,
+      "owned_by": "system"
+    },
+    {
+      "id": "text-search-curie-query-001",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-davinci-002",
+      "object": "model",
+      "created": 1649880484,
+      "owned_by": "openai"
+    },
+    {
+      "id": "code-search-babbage-text-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "ada",
+      "object": "model",
+      "created": 1649357491,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-ada-001",
+      "object": "model",
+      "created": 1649364042,
+      "owned_by": "openai"
+    },
+    {
+      "id": "ada-similarity",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "code-search-ada-code-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-similarity-ada-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-davinci-edit-001",
+      "object": "model",
+      "created": 1649809179,
+      "owned_by": "openai"
+    },
+    {
+      "id": "code-davinci-edit-001",
+      "object": "model",
+      "created": 1649880484,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-search-curie-doc-001",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo-1106",
+      "object": "model",
+      "created": 1698959748,
+      "owned_by": "system"
+    },
+    {
+      "id": "text-curie-001",
+      "object": "model",
+      "created": 1649364043,
+      "owned_by": "openai"
+    },
+    {
+      "id": "curie",
+      "object": "model",
+      "created": 1649359874,
+      "owned_by": "openai"
+    },
+    {
+      "id": "whisper-1",
+      "object": "model",
+      "created": 1677532384,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "tts-1",
+      "object": "model",
+      "created": 1681940951,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "davinci",
+      "object": "model",
+      "created": 1649359874,
+      "owned_by": "openai"
+    },
+    {
+      "id": "tts-1-1106",
+      "object": "model",
+      "created": 1699053241,
+      "owned_by": "system"
+    },
+    {
+      "id": "tts-1-hd-1106",
+      "object": "model",
+      "created": 1699053533,
+      "owned_by": "system"
+    }
+  ]
+}
+; Execution error (ExceptionInfo) at clj-http.client/exceptions-response (client.clj:240).
+; clj-http: status 400
+; Evaluation of file openai_connector.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉openai.openai-connector꞉> 
+; Execution error (ExceptionInfo) at clj-http.client/exceptions-response (client.clj:240).
+; clj-http: status 400
+clj꞉openai.openai-connector꞉> 
+; Evaluating file: openai_connector.clj
+{
+  "object": "list",
+  "data": [
+    {
+      "id": "text-search-babbage-doc-001",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "curie-search-query",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-davinci-003",
+      "object": "model",
+      "created": 1669599635,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "dall-e-3",
+      "object": "model",
+      "created": 1698785189,
+      "owned_by": "system"
+    },
+    {
+      "id": "text-search-babbage-query-001",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage",
+      "object": "model",
+      "created": 1649358449,
+      "owned_by": "openai"
+    },
+    {
+      "id": "babbage-search-query",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-babbage-001",
+      "object": "model",
+      "
+created": 1649364043,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-similarity-davinci-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "davinci-similarity",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "curie-similarity",
+      "object": "model",
+      "created": 1651172510,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage-search-document",
+      "object": "model",
+      "created": 1651172510,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "dall-e-2",
+      "object": "model",
+      "created": 1698798177,
+      "owned_by": "system"
+    },
+    {
+      "id": "curie-instruct-beta",
+      "object": "model",
+      "created": 1649364042,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-search-ada-doc-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo-0301",
+      "object": "model",
+      "created": 1677649963,
+      "owned_by": "openai"
+    },
+    {
+      "id": "davinci-instruct-beta",
+      "object": "model",
+      "created": 1649364042,
+      "owned_by": "openai"
+    },
+    {
+      "id": "gpt-3.5-turbo-16k-0613",
+      "object": "model",
+      "created": 1685474247,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-similarity-babbage-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-search-davinci-doc-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage-similarity",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-embedding-ada-002",
+      "object": "model",
+      "created": 1671217299,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "davinci-search-query",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-similarity-curie-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo-instruct",
+      "object": "model",
+      "created": 1692901427,
+      "owned_by": "system"
+    },
+    {
+      "id": "gpt-3.5-turbo-16k",
+      "object": "model",
+      "created": 1683758102,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "text-davinci-001",
+      "object": "model",
+      "created": 1649364042,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-search-davinci-query-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "ada-search-document",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo-0613",
+      "object": "model",
+      "created": 1686587434,
+      "owned_by": "openai"
+    },
+    {
+      "id": "ada-code-search-code",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "davinci-002",
+      "object": "model",
+      "created": 1692634301,
+      "owned_by": "system"
+    },
+    {
+      "id": "gpt-3.5-turbo-instruct-0914",
+      "object": "model",
+      "created": 1694122472,
+      "owned_by": "system"
+    },
+    {
+      "id": "babbage-002",
+      "object": "model",
+      "created": 1692634615,
+      "owned_by": "system"
+    },
+    {
+      "id": "davinci-search-document",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "curie-search-document",
+      "object": "model",
+      "created": 1651172508,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage-code-search-code",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo",
+      "object": "model",
+      "created": 1677610602,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-search-ada-query-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "code-search-ada-text-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "babbage-code-search-text",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "code-search-babbage-code-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "ada-search-query",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "ada-code-search-text",
+      "object": "model",
+      "created": 1651172510,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "tts-1-hd",
+      "object": "model",
+      "created": 1699046015,
+      "owned_by": "system"
+    },
+    {
+      "id": "text-search-curie-query-001",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-davinci-002",
+      "object": "model",
+      "created": 1649880484,
+      "owned_by": "openai"
+    },
+    {
+      "id": "code-search-babbage-text-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "ada",
+      "object": "model",
+      "created": 1649357491,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-ada-001",
+      "object": "model",
+      "created": 1649364042,
+      "owned_by": "openai"
+    },
+    {
+      "id": "ada-similarity",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "code-search-ada-code-001",
+      "object": "model",
+      "created": 1651172507,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-similarity-ada-001",
+      "object": "model",
+      "created": 1651172505,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "text-davinci-edit-001",
+      "object": "model",
+      "created": 1649809179,
+      "owned_by": "openai"
+    },
+    {
+      "id": "code-davinci-edit-001",
+      "object": "model",
+      "created": 1649880484,
+      "owned_by": "openai"
+    },
+    {
+      "id": "text-search-curie-doc-001",
+      "object": "model",
+      "created": 1651172509,
+      "owned_by": "openai-dev"
+    },
+    {
+      "id": "gpt-3.5-turbo-1106",
+      "object": "model",
+      "created": 1698959748,
+      "owned_by": "system"
+    },
+    {
+      "id": "text-curie-001",
+      "object": "model",
+      "created": 1649364043,
+      "owned_by": "openai"
+    },
+    {
+      "id": "curie",
+      "object": "model",
+      "created": 1649359874,
+      "owned_by": "openai"
+    },
+    {
+      "id": "whisper-1",
+      "object": "model",
+      "created": 1677532384,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "tts-1",
+      "object": "model",
+      "created": 1681940951,
+      "owned_by": "openai-internal"
+    },
+    {
+      "id": "davinci",
+      "object": "model",
+      "created": 1649359874,
+      "owned_by": "openai"
+    },
+    {
+      "id": "tts-1-1106",
+      "object": "model",
+      "created": 1699053241,
+      "owned_by": "system"
+    },
+    {
+      "id": "tts-1-hd-1106",
+      "object": "model",
+      "created": 1699053533,
+      "owned_by": "system"
+    }
+  ]
+}
+; Execution error (ExceptionInfo) at clj-http.client/exceptions-response (client.clj:240).
+; clj-http: status 400
+; Evaluation of file openai_connector.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉openai.openai-connector꞉> 
+; Execution error (ExceptionInfo) at clj-http.client/exceptions-response (client.clj:240).
+; clj-http: status 400
+clj꞉openai.openai-connector꞉> 
+; Evaluating file: openai_connector.clj
+; Execution error (ExceptionInfo) at clj-http.client/exceptions-response (client.clj:240).
+; clj-http: status 400
+; Evaluation of file openai_connector.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉openai.openai-connector꞉> 
+; Execution error (ExceptionInfo) at clj-http.client/exceptions-response (client.clj:240).
+; clj-http: status 400
+clj꞉openai.openai-connector꞉> 
+; Evaluating file: openai_connector.clj
+{
+  "id": "asst_7jMeVq5zHHGMSR1ZAbHMzwO9",
+  "object": "assistant",
+  "created_at": 1704637635,
+  "name": null,
+  "description": null,
+  "model": "gpt-3.5-turbo-1106",
+  "instructions": null,
+  "tools": [],
+  "file_ids": [],
+  "metadata": {}
+}
+{:cached nil, :request-time 295, :repeatable? false, :protocol-version {:name HTTP, :major 1, :minor 1}, :streaming? true, :http-client #object[org.apache.http.impl.client.InternalHttpClient 0x6820beac org.apache.http.impl.client.InternalHttpClient@6820beac], :chunked? true, :cookies {__cf_bm {:discard false, :domain api.openai.com, :expires #inst "2024-01-07T14:57:15.000-00:00", :path /, :secure true, :value GyZgJi4Nf7i7tUZ43lXG5YepCbcITrYVGeF0OADscxs-1704637635-1-ASMcMpS5AMZGboy9s1pnKzJoJ1z0WloYTmF25MERgixBjals4W4VxJbh0LufLlnPBjeBiTsZwgNuoW4JLlBKZV8=, :version 0}, _cfuvid {:discard true, :domain api.openai.com, :path /, :secure true, :value 8s4j43dnr0g_hfd5WtrEhdZoVOv.BFpmEp8jr1hsRyk-1704637635441-0-604800000, :version 0}}, :reason-phrase OK, :headers {openai-organization user-ggn8omn7bt5hrl9owgvswdz2, Server cloudflare, Content-Type application/json, alt-svc h3=":443"; ma=86400, openai-version 2020-10-01, strict-transport-security max-age=15724800; includeSubDomains, openai-processing-ms 127, Connection close, Transfer-Encoding chunked, CF-Cache-Status DYNAMIC, CF-RAY 841ce163de2f071e-LHR, Date Sun, 07 Jan 2024 14:27:15 GMT, x-request-id 282b959ddca3995a2c28b316e8d3e7d1}, :orig-content-encoding gzip, :status 200, :length -1, :body {
+  "id": "asst_7jMeVq5zHHGMSR1ZAbHMzwO9",
+  "object": "assistant",
+  "created_at": 1704637635,
+  "name": null,
+  "description": null,
+  "model": "gpt-3.5-turbo-1106",
+  "instructions": null,
+  "tools": [],
+  "file_ids": [],
+  "metadata": {}
+}, :trace-redirects []}
+nil
+nil
+clj꞉openai.openai-connector꞉> 
+{
+  "id": "asst_oRMzZQEmrnlnIhqyv0QBAtUe",
+  "object": "assistant",
+  "created_at": 1704637635,
+  "name": null,
+  "description": null,
+  "model": "gpt-3.5-turbo-1106",
+  "instructions": null,
+  "tools": [],
+  "file_ids": [],
+  "metadata": {}
+}
+{:cached nil, :request-time 209, :repeatable? false, :protocol-version {:name HTTP, :major 1, :minor 1}, :streaming? true, :http-client #object[org.apache.http.impl.client.InternalHttpClient 0x7a1d8f76 org.apache.http.impl.client.InternalHttpClient@7a1d8f76], :chunked? true, :cookies {__cf_bm {:discard false, :domain api.openai.com, :expires #inst "2024-01-07T14:57:15.000-00:00", :path /, :secure true, :value _bOOVnOKzaJ01nisfXcOhw3N_VZR_8xZAQBYRF3wjsE-1704637635-1-AarkdFlSwIwA/PUI/Jrg9Ux+aVQUdNzofJlUHrdq9qyw9gctRSVNVvVv0+lFva/bPzyGw3eK3Tm9/7lnd+RH6Jg=, :version 0}, _cfuvid {:discard true, :domain api.openai.com, :path /, :secure true, :value LrYm8oj8uBQiMlEgWSmtM3IJluMbC6hGiH2j5VMWPJU-1704637635843-0-604800000, :version 0}}, :reason-phrase OK, :headers {openai-organization user-ggn8omn7bt5hrl9owgvswdz2, Server cloudflare, Content-Type application/json, alt-svc h3=":443"; ma=86400, openai-version 2020-10-01, strict-transport-security max-age=15724800; includeSubDomains, openai-processing-ms 62, Connection close, Transfer-Encoding chunked, CF-Cache-Status DYNAMIC, CF-RAY 841ce166c83452ba-LHR, Date Sun, 07 Jan 2024 14:27:15 GMT, x-request-id 94534624a0b77dc44dd701ef42d638e2}, :orig-content-encoding gzip, :status 200, :length -1, :body {
+  "id": "asst_oRMzZQEmrnlnIhqyv0QBAtUe",
+  "object": "assistant",
+  "created_at": 1704637635,
+  "name": null,
+  "description": null,
+  "model": "gpt-3.5-turbo-1106",
+  "instructions": null,
+  "tools": [],
+  "file_ids": [],
+  "metadata": {}
+}, :trace-redirects []}
+nil
+nil
+clj꞉openai.openai-connector꞉> 
+; Evaluating file: openai_connector.clj
+{:cached nil, :request-time 254, :repeatable? false, :protocol-version {:name HTTP, :major 1, :minor 1}, :streaming? true, :http-client #object[org.apache.http.impl.client.InternalHttpClient 0x55ade1f1 org.apache.http.impl.client.InternalHttpClient@55ade1f1], :chunked? true, :cookies {__cf_bm {:discard false, :domain api.openai.com, :expires #inst "2024-01-07T14:59:52.000-00:00", :path /, :secure true, :value vNbG35Ckuis_Vyhd6P6eOwALuzarb1o_WNIvTQv4lKA-1704637792-1-Aa93fny1QdzVlVVSFWi5v78u9p57STIEOYfErsxuDr+BtLuQdf9yZwE22rOzRb3SeTdaV9bxZDAZ1s4BvPCqItg=, :version 0}, _cfuvid {:discard true, :domain api.openai.com, :path /, :secure true, :value X75oTzFxVb5.o07nWeHld7e5pCYD14qxWG4OymZzREg-1704637792334-0-604800000, :version 0}}, :reason-phrase OK, :headers {openai-organization user-ggn8omn7bt5hrl9owgvswdz2, Server cloudflare, Content-Type application/json, alt-svc h3=":443"; ma=86400, openai-version 2020-10-01, strict-transport-security max-age=15724800; includeSubDomains, openai-processing-ms 69, Connection clo
+se, Transfer-Encoding chunked, CF-Cache-Status DYNAMIC, CF-RAY 841ce538dea26406-LHR, Date Sun, 07 Jan 2024 14:29:52 GMT, x-request-id 7cecf0b6dbf23a8b561a0e11196e5768}, :orig-content-encoding gzip, :status 200, :length -1, :body {
+  "id": "asst_RBAifnW1J7PJlCiDS6HAjPGo",
+  "object": "assistant",
+  "created_at": 1704637792,
+  "name": null,
+  "description": null,
+  "model": "gpt-3.5-turbo-1106",
+  "instructions": null,
+  "tools": [],
+  "file_ids": [],
+  "metadata": {}
+}, :trace-redirects []}
+nil
+nil
+clj꞉openai.openai-connector꞉> 
+; Evaluating file: openai_connector.clj
+{
+  "id": "asst_ae612DibHlNUdfwhBnxqIXaB",
+  "object": "assistant",
+  "created_at": 1704637819,
+  "name": null,
+  "description": null,
+  "model": "gpt-3.5-turbo-1106",
+  "instructions": null,
+  "tools": [],
+  "file_ids": [],
+  "metadata": {}
+}
+nil
+nil
+clj꞉openai.openai-connector꞉> 
+; Evaluating file: openai_connector.clj
+{
+  "id": "asst_4Qv3uPNbuRihM7bkcFp8VyG7",
+  "object": "assistant",
+  "created_at": 1704638037,
+  "name": "Assistant test1",
+  "description": null,
+  "model": "gpt-3.5-turbo-1106",
+  "instructions": "You will reply in rhymes",
+  "tools": [],
+  "file_ids": [],
+  "metadata": {}
+}
+nil
+nil
+clj꞉openai.openai-connector꞉> 
+; Evaluating file: openai_connector.clj
+{
+  "id": "asst_Wfna5TJCKTZUxZGgwWHgza4g",
+  "object": "assistant",
+  "created_at": 1704638050,
+  "name": "Assistant test1",
+  "description": null,
+  "model": "gpt-3.5-turbo-1106",
+  "instructions": "You will reply in rhymes",
+  "tools": [],
+  "file_ids": [],
+  "metadata": {}
+}
+nil
+nil
+clj꞉openai.openai-connector꞉> 
+; Evaluating file: openai_connector.clj
+; Execution error (ClassCastException) at openai.openai-connector/create-assistant (openai_connector.clj:41).
+; class java.lang.String cannot be cast to class clojure.lang.IFn (java.lang.String is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
+; Evaluation of file openai_connector.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉openai.openai-connector꞉> 
+; Evaluating file: openai_connector.clj
+nil
+nil
+clj꞉openai.openai-connector꞉> 
+nil
+nil
+clj꞉openai.openai-connector꞉> 
+nil
+nil
+clj꞉openai.openai-connector꞉> 
+; Evaluating file: openai_connector.clj
+{
+  "id": "asst_fTZ0gxnsIGcLYjlT2lKoNf0k",
+  "object": "assistant",
+  "created_at": 1704638145,
+  "name": "Assistant test1",
+  "description": null,
+  "model": "gpt-3.5-turbo-1106",
+  "instructions": "You will reply in rhymes",
+  "tools": [],
+  "file_ids": [],
+  "metadata": {}
+}
+nil
+clj꞉openai.openai-connector꞉> 
+; Evaluating file: openai_connector.clj
+; Execution error (ClassCastException) at openai.openai-connector/create-assistant (openai_connector.clj:42).
+; class java.lang.String cannot be cast to class clojure.lang.IFn (java.lang.String is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
+; Evaluation of file openai_connector.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉openai.openai-connector꞉> 
+; Evaluating file: openai_connector.clj
+nil
+nil
+clj꞉openai.openai-connector꞉> 
+; Evaluating file: openai_connector.clj
+nil
+nil
+clj꞉openai.openai-connector꞉> 
+nil
+nil
+clj꞉openai.openai-connector꞉> 
+; Evaluating file: openai_connector.clj
+asst_dA6MHJmZXBPuVOZek0vp2EnL
+nil
+clj꞉openai.openai-connector꞉> 
+asst_JgmmbVGSn5AK5XdgZX6LyM5C
+nil
+clj꞉openai.openai-connector꞉> 
+; Evaluating file: openai_connector.clj
+asst_T8wf8Enpsfwj8Mivo2yot9t6
+nil
+clj꞉openai.openai-connector꞉> 
+; Evaluating file: openai_connector.clj
+asst_zKX1ZesynATvzzEXcPfNJQ9U
+nil
+clj꞉openai.openai-connector꞉> 
+asst_xBNswo9J9XmJHHkKbjeZAUua
+nil
+clj꞉openai.openai-connector꞉> 
+; Evaluating file: openai_connector.clj
+"asst_BarMa7Wg1uOhu6uYsC7kf3dR"
 clj꞉openai.openai-connector꞉> 
