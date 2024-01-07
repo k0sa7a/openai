@@ -7,6 +7,7 @@
                  [clj-http "3.12.3"]  ; Add clj-http dependency
                  [cheshire "5.10.1"]   ; Add cheshire dependency
                  [environ "1.2.0"]
+                 [org.clojure/data.csv "1.0.1"]
                  ]
   :main ^:skip-aot openai.core
   :target-path "target/%s"
