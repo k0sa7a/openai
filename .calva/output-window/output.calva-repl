@@ -26,3 +26,194 @@ clj꞉openai.core꞉>  ; Use `alt+enter` to evaluate
 clj꞉openai.core꞉> 
 ; Jack-in done.
 clj꞉openai.core꞉> 
+; Evaluating file: openai_connector.clj
+Assistant ID is: asst_8II2poe50r8Yw6RytIv4Q49Z
+Thread ID is: thread_yD51DbBHd5WEvsvEAp5AC88E
+msg_4bUfpdFXgd22GGx7w4Ixq8Qu
+nil
+clj꞉openai.openai-connector꞉> 
+; Evaluating file: openai_connector.clj
+Assistant ID is: asst_6zGsazvhgxmuQUKPtacXjfb4
+Thread ID is: thread_jY5mORVYGSsPAYsPr3EWySoU
+"msg_03qXoQj29cHY7aOpAp37zyPC"
+clj꞉openai.openai-connector꞉> 
+"msg_D94MsJEL14vJhCDdKSZkcNVB"
+clj꞉openai.openai-connector꞉> 
+"msg_yQ4X6hFZgivT5W7OaadJqV7K"
+clj꞉openai.openai-connector꞉> 
+"msg_4jBCZv6HWXgf5jv3rr1FFf2p"
+clj꞉openai.openai-connector꞉> 
+"msg_20ZGW4zd3iWsszGuNKITLaeu"
+clj꞉openai.openai-connector꞉> 
+; Evaluating file: openai_connector.clj
+Assistant ID is: asst_4z6oU1xQLm7iDBdkyYgXGarR
+Thread ID is: thread_qtOPzl9gQzRm7KXzKGNW2uZn
+"run_o90lgKIt1002lABKRr6XsKne"
+clj꞉openai.openai-connector꞉> 
+; Evaluating file: openai_connector.clj
+Assistant ID is: asst_kd1XNrlfwC5RkJbNeNnsekpc
+Thread ID is: thread_04rxptRO99fEiU7LThOA4B90
+Run ID is: run_KNU0jJx3p9YHVarSrrU4Adn4
+nil
+clj꞉openai.openai-connector꞉> 
+; Evaluating file: openai_connector.clj
+Assistant ID is: asst_TLA3UXs0q41WFxeDATd3BqCE
+Thread ID is: thread_IePEFJYTpVtPbcLSezkf5UM2
+Run ID is: run_PBRH3xxXrP1DpGeyp84JxQuw
+; Execution error (ExceptionInfo) at clj-http.client/exceptions-response (client.clj:240).
+; clj-http: status 404
+; Evaluation of file openai_connector.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉openai.openai-connector꞉> 
+; Execution error (ExceptionInfo) at clj-http.client/exceptions-response (client.clj:240).
+; clj-http: status 404
+clj꞉openai.openai-connector꞉> 
+; Execution error (ExceptionInfo) at clj-http.client/exceptions-response (client.clj:240).
+; clj-http: status 404
+clj꞉openai.openai-connector꞉> 
+; Execution error (ExceptionInfo) at clj-http.client/exceptions-response (client.clj:240).
+; clj-http: status 404
+clj꞉openai.openai-connector꞉> 
+; Execution error (ExceptionInfo) at clj-http.client/exceptions-response (client.clj:240).
+; clj-http: status 404
+clj꞉openai.openai-connector꞉> 
+; Evaluating file: openai_connector.clj
+Assistant ID is: asst_StCHyuVTW9ZPG7S5wqGTvhIX
+Thread ID is: thread_P5gGhq9k0fxmWYcQbneFbRbB
+Run ID is: run_RWGPr4wLVGwYEkfOTKTqmNll
+; Execution error (ExceptionInfo) at clj-http.client/exceptions-response (client.clj:240).
+; clj-http: status 404
+; Evaluation of file openai_connector.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉openai.openai-connector꞉> 
+; Execution error (ExceptionInfo) at clj-http.client/exceptions-response (client.clj:240).
+; clj-http: status 404
+clj꞉openai.openai-connector꞉> 
+; Execution error (ExceptionInfo) at clj-http.client/exceptions-response (client.clj:240).
+; clj-http: status 404
+clj꞉openai.openai-connector꞉> 
+; Execution error (ExceptionInfo) at clj-http.client/exceptions-response (client.clj:240).
+; clj-http: status 404
+clj꞉openai.openai-connector꞉> 
+; Execution error (ExceptionInfo) at clj-http.client/exceptions-response (client.clj:240).
+; clj-http: status 404
+clj꞉openai.openai-connector꞉> 
+; Evaluating file: openai_connector.clj
+Assistant ID is: asst_nnKpKbOHU4SEoisB8yc5cNyU
+Thread ID is: thread_iPfX8GquoDOT4N4bJ2T6dw0L
+Run ID is: run_6LQ4ckbipoSIuwSVJmoSQISh
+; Execution error (ExceptionInfo) at clj-http.client/exceptions-response (client.clj:240).
+; clj-http: status 404
+; Evaluation of file openai_connector.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉openai.openai-connector꞉> 
+; Evaluating file: openai_connector.clj
+Assistant ID is: asst_FpGGMxp700fTVj0g8Dk52aMH
+Thread ID is: thread_qXLOtJZ8UiIs7ch38gvBD0CV
+Run ID is: run_RVAhQgQpacLyesrAjJudMewd
+nil
+clj꞉openai.openai-connector꞉> 
+"https://api.openai.com/v1/threads/thread_qXLOtJZ8UiIs7ch38gvBD0CV/runsrun_RVAhQgQpacLyesrAjJudMewd/steps"
+clj꞉openai.openai-connector꞉> 
+; Evaluating file: openai_connector.clj
+Assistant ID is: asst_2mcQ1GNJTYxDpLyOXxnwCiTR
+Thread ID is: thread_2u6xRTSKi9634qyFJkNdxBw3
+Run ID is: run_sWFweqaeiUzMSNDwGIXeyd8k
+{
+  "object": "list",
+  "data": [],
+  "first_id": null,
+  "last_id": null,
+  "has_more": false
+}
+nil
+clj꞉openai.openai-connector꞉> 
+{
+  "object": "list",
+  "data": [],
+  "first_id": null,
+  "last_id": null,
+  "has_more": false
+}
+nil
+clj꞉openai.openai-connector꞉> 
+{
+  "object": "list",
+  "data": [],
+  "first_id": null,
+  "last_id": null,
+  "has_more": false
+}
+nil
+clj꞉openai.openai-connector꞉> 
+{
+  "object": "list",
+  "data": [],
+  "first_id": null,
+  "last_id": null,
+  "has_more": false
+}
+nil
+clj꞉openai.openai-connector꞉> 
+{
+  "object": "list",
+  "data": [],
+  "first_id": null,
+  "last_id": null,
+  "has_more": false
+}
+nil
+clj꞉openai.openai-connector꞉> 
+{
+  "object": "list",
+  "data": [],
+  "first_id": null,
+  "last_id": null,
+  "has_more": false
+}
+nil
+clj꞉openai.openai-connector꞉> 
+{:cached nil,
+ :request-time 271,
+ :repeatable? false,
+ :protocol-version {:name "HTTP", :major 1, :minor 1},
+ :streaming? true,
+ :http-client
+ #object[org.apache.http.impl.client.InternalHttpClient 0x66a82b39 "org.apache.http.impl.client.InternalHttpClient@66a82b39"],
+ :chunked? true,
+ :cookies
+ {"__cf_bm"
+  {:discard false,
+   :domain "api.openai.com",
+   :expires #inst "2024-01-07T16:28:21.000-00:00",
+   :path "/",
+   :secure true,
+   :value
+   "vS0vTPNwtcV3kHRE_OX4VIeACHLvRoRdYe_ycPZTLC0-1704643101-1-AatCZsVr3k1r+MwkHhs7MUL0OpYtaHR85dUuWzi7updEBDG6hRhLT150/dE8ThAbEO9xkBL5ouVE7aLY0CYDKeQ=",
+   :version 0},
+  "_cfuvid"
+  {:discard true,
+   :domain "api.openai.com",
+   :path "/",
+   :secure true,
+   :value "A9IlhtIfTOieZ.Yy4kMnSWTCWuuF4tDbj7b_KwXJhgg-1704643101718-0-604800000",
+   :version 0}},
+ :reason-phrase "OK",
+ :headers
+ {"openai-organization" "user-ggn8omn7bt5hrl9owgvswdz2",
+  "Server" "cloudflare",
+  "Content-Type" "application/json",
+  "alt-svc" "h3=\":443\"; ma=86400",
+  "openai-version" "2020-10-01",
+  "strict-transport-security" "max-age=15724800; includeSubDomains",
+  "openai-processing-ms" "85",
+  "Connection" "close",
+  "Transfer-Encoding" "chunked",
+  "CF-Cache-Status" "DYNAMIC",
+  "CF-RAY" "841d66d83dc971fe-LHR",
+  "Date" "Sun, 07 Jan 2024 15:58:21 GMT",
+  "x-request-id" "ca317a4e5e5d59db7317013f9b48b49a"},
+ :orig-content-encoding "gzip",
+ :status 200,
+ :length -1,
+ :body
+ "{\n  \"id\": \"run_sWFweqaeiUzMSNDwGIXeyd8k\",\n  \"object\": \"thread.run\",\n  \"created_at\": 1704643000,\n  \"assistant_id\": \"asst_2mcQ1GNJTYxDpLyOXxnwCiTR\",\n  \"thread_id\": \"thread_2u6xRTSKi9634qyFJkNdxBw3\",\n  \"status\": \"failed\",\n  \"started_at\": 1704643000,\n  \"expires_at\": null,\n  \"cancelled_at\": null,\n  \"failed_at\": 1704643006,\n  \"completed_at\": null,\n  \"last_error\": {\n    \"code\": \"rate_limit_exceeded\",\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.\"\n  },\n  \"model\": \"gpt-3.5-turbo-1106\",\n  \"instructions\": \"Please return the ID, company name and generate your own description of the value for each in the format: ID - Value - Description; Do not return anything else\",\n  \"tools\": [],\n  \"file_ids\": [],\n  \"metadata\": {}\n}",
+ :trace-redirects []}
+clj꞉openai.openai-connector꞉> 
