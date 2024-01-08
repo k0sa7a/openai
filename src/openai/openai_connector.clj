@@ -96,19 +96,69 @@
 (println "Run ID is:" run-id)
 
 ;; list the run steps
+;; (defn list-run-steps []
+;;   (let [response (client/get (str "https://api.openai.com/v1/threads/" thread-id "/runs/" run-id "/steps")
+;;                              {:headers {"Authorization" (str "Bearer " openai-api-key)
+;;                                         "Content-Type" "application/json"
+;;                                         "OpenAI-Beta" "assistants=v1"}})
+;;         body (:body response)
+;;         parsed-body (json/parse-string body true)]
+;;     (println parsed-body)
+;;     (get-in parsed-body [:data 0 :step_details :message_creation :message_id]))
+;;   )
+
 (defn list-run-steps []
-  (let [response (client/get (str "https://api.openai.com/v1/threads/" thread-id "/runs/" run-id "/steps")
-                             {:headers {"Authorization" (str "Bearer " openai-api-key)
-                                        "Content-Type" "application/json"
-                                        "OpenAI-Beta" "assistants=v1"}})
-        body (:body response)]
-    (println body))
-  )
+  (loop []
+    (let [response (client/get (str "https://api.openai.com/v1/threads/" thread-id "/runs/" run-id "/steps")
+                               {:headers {"Authorization" (str "Bearer " openai-api-key)
+                                          "Content-Type" "application/json"
+                                          "OpenAI-Beta" "assistants=v1"}})
+          body (:body response)
+          parsed-body (json/parse-string body true)]
+      (println parsed-body) ; For debugging purposes
+      (if (empty? (:data parsed-body))
+        (do
+          (Thread/sleep 5000) ; Wait for 5 seconds before retrying
+          (recur)) ; Retry the request
+        (get-in parsed-body [:data 0 :step_details :message_creation :message_id])))))
 
-(list-run-steps)
-
+(def msg-id (list-run-steps))
+(println "Message ID is:" msg-id)
 ;; quick check on the run (to see if it failed)
 ;; (client/get (str "https://api.openai.com/v1/threads/" thread-id "/runs/" run-id)
 ;;             {:headers {"Authorization" (str "Bearer " openai-api-key)
 ;;                        "Content-Type" "application/json"
 ;;                        "OpenAI-Beta" "assistants=v1"}})
+
+
+;; retrieve message
+;; (defn retrieve-message []
+;;   (let [response (client/get (str "https://api.openai.com/v1/threads/" thread-id "/messages/" msg-id)
+;;                              {:headers {"Authorization" (str "Bearer " openai-api-key)
+;;                                         "Content-Type" "application/json"
+;;                                         "OpenAI-Beta" "assistants=v1"}})
+;;         body (:body response)
+;;         parsed-body (json/parse-string body true)]
+;;    (get-in parsed-body [:content 0 :text :value])))
+
+(defn retrieve-message []
+  (loop []
+    (let [response (client/get (str "https://api.openai.com/v1/threads/" thread-id "/messages/" msg-id)
+                               {:headers {"Authorization" (str "Bearer " openai-api-key)
+                                          "Content-Type" "application/json"
+                                          "OpenAI-Beta" "assistants=v1"}})
+          body (:body response)
+          parsed-body (json/parse-string body true)
+          value (get-in parsed-body [:content 0 :text :value])]
+      ;; (println parsed-body) ; For debugging purposes
+      (if (empty? value)
+        (do
+          (Thread/sleep 5000) ; Wait for 5 seconds before retrying
+          (recur)) ; Retry the request
+        value))))
+
+
+
+(println (retrieve-message))
+
+;; TO DO: delete the assistant & delete the thread after done
