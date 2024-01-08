@@ -160,3 +160,5 @@
 
 
 (println (retrieve-message))
+
+;; TO DO: delete the assistant & delete the thread after done
