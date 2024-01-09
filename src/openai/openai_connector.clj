@@ -40,7 +40,7 @@
     (get parsed-body :id)))
 
 
-(def assistant-id (create-assistant "Assistant test1" "gpt-3.5-turbo-1106" "Please return the ID, company name and generate your own description of the value for each in the format: ID - Value - Description; Do not return anything else"))
+(def assistant-id (create-assistant "Assistant test 2" "gpt-3.5-turbo-1106" "Please return the ID, company name and generate your own description of the value for each in the format: ID - Value - Description; Do not return anything else"))
 (println "Assistant ID is:" assistant-id)
 
 ;; function to create a thread (no messages created for it)
@@ -161,4 +161,28 @@
 
 (println (retrieve-message))
 
-;; TO DO: delete the assistant & delete the thread after done
+;; delete the thread after run is done; prints body to check if deleted true
+(defn delete-thread []
+  (let [response (client/delete (str "https://api.openai.com/v1/threads/" thread-id)
+                                {:headers {"Authorization" (str "Bearer " openai-api-key)
+                                           "Content-Type" "application/json"
+                                           "OpenAI-Beta" "assistants=v1"}})
+        body (:body response)
+        parsed-body (json/parse-string body true)]
+
+    (println parsed-body)))
+
+(delete-thread)
+
+;; delete the assistant after run is done; prints body to check if deleted true
+(defn delete-assistant []
+  (let [response (client/delete (str "https://api.openai.com/v1/assistants/" assistant-id)  {
+                                                                      :headers {"Authorization" (str "Bearer " openai-api-key)
+                                                                                "Content-Type" "application/json"
+                                                                                "OpenAI-Beta" "assistants=v1"}})
+        body (:body response)
+        parsed-body (json/parse-string body true)]
+
+    (println parsed-body)))
+
+(delete-assistant)
