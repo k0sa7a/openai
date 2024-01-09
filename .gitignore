@@ -13,7 +13,4 @@ pom.xml.asc
 .hg/
 .calva/
 .clj-kondo/
-<<<<<<< HEAD
 .lsp/
-=======
->>>>>>> 8daf8665ecc2022a8a6648ac5b5d170eaeda0a8d
