@@ -57,7 +57,7 @@
 
 ;; function to create a single message
 ;; returns the id an message content
-(defn create-message [content]
+(defn create-message [content thread-id]
   (let [payload (json/generate-string {"role" "user"
                                        "content" content})
         response (client/post (str "https://api.openai.com/v1/threads/" thread-id "/messages")
@@ -80,7 +80,7 @@
 
 ;; create a run
 ;; returns a run id
-(defn create-run []
+(defn create-run [assistant-id thread-id]
   (let [payload (json/generate-string {"assistant_id" assistant-id})
         response (client/post (str "https://api.openai.com/v1/threads/" thread-id "/runs")
                               {:body  payload
@@ -106,7 +106,7 @@
 ;;     (get-in parsed-body [:data 0 :step_details :message_creation :message_id]))
 ;;   )
 
-(defn list-run-steps []
+(defn list-run-steps [thread-id run-id]
   (loop []
     (let [response (client/get (str "https://api.openai.com/v1/threads/" thread-id "/runs/" run-id "/steps")
                                {:headers {"Authorization" (str "Bearer " openai-api-key)
@@ -139,7 +139,7 @@
 ;;         parsed-body (json/parse-string body true)]
 ;;    (get-in parsed-body [:content 0 :text :value])))
 
-(defn retrieve-message []
+(defn retrieve-message [thread-id msg-id]
   (loop []
     (let [response (client/get (str "https://api.openai.com/v1/threads/" thread-id "/messages/" msg-id)
                                {:headers {"Authorization" (str "Bearer " openai-api-key)
@@ -160,7 +160,7 @@
 
 
 ;; delete the thread after run is done; prints body to check if deleted true
-(defn delete-thread []
+(defn delete-thread [thread-id]
   (let [response (client/delete (str "https://api.openai.com/v1/threads/" thread-id)
                                 {:headers {"Authorization" (str "Bearer " openai-api-key)
                                            "Content-Type" "application/json"
@@ -173,7 +173,7 @@
 
 
 ;; delete the assistant after run is done; prints body to check if deleted true
-(defn delete-assistant []
+(defn delete-assistant [assistant-id]
   (let [response (client/delete (str "https://api.openai.com/v1/assistants/" assistant-id)  {
                                                                       :headers {"Authorization" (str "Bearer " openai-api-key)
                                                                                 "Content-Type" "application/json"
@@ -203,46 +203,81 @@
 
 ;; --- FLOW FOR THE OPEN AI TEST ---
 
+;; ;; OPTION 1 (many messages and one run)..........|
 ;; create an assistant
-(def assistant-id (create-assistant "Assistant test 2" "gpt-3.5-turbo-1106" "Please return the ID, company name and generate your own description of the value for each in the format: ID - Value - Description; Do not return anything else"))
-(println "Assistant ID is:" assistant-id)
+;; (def assistant-id (create-assistant "Assistant test 2" "gpt-3.5-turbo-1106" "Please return the ID, company name and generate your own description of the value for each in the format: ID - Value - Description; Do not return anything else"))
+;; (println "Assistant ID is:" assistant-id)
 
-;; create a thread
-(def thread-id (create-thread))
-(println "Thread ID is:" thread-id)
+;; ;; create a thread
+;; (def thread-id (create-thread))
+;; (println "Thread ID is:" thread-id)
 
-;; parse the csv with initial data
-(def data (parse-csv "src/openai/data.csv"))
+;; ;; parse the csv with initial data
+;; (def data (parse-csv "src/openai/data.csv"))
 
-;; extract the columns that we require and concat the data
-(def sequence-for-messages (extract-and-concat data :FEATURE_ID :FEATURE_NAME))
-(prn sequence-for-messages)
-
-;; OPTION 1 (many messages and one run)..........|
-;; create the messages
-(doseq [msg sequence-for-messages]
-  (create-message msg)
-  (Thread/sleep 1000))
-
-;; create the run
-(def run-id (create-run))
-(println "Run ID is:" run-id)
-
-;; list run steps
-(def msg-id (list-run-steps))
-(println "Message ID is:" msg-id)
-
-;; retrieve the message
-(println (retrieve-message))
-;; ...............................................|
+;; ;; extract the columns that we require and concat the data
+;; (def sequence-for-messages (extract-and-concat data :FEATURE_ID :FEATURE_NAME))
+;; (prn sequence-for-messages)
 
 
-;; OPTON 2 (many runs witn individual message)==========}
+;; ;; create the messages
+;; (doseq [msg sequence-for-messages]
+;;   (create-message msg thread-id)
+;;   (Thread/sleep 1000))
+
+;; ;; create the run
+;; (def run-id (create-run assistant-id thread-id))
+;; (println "Run ID is:" run-id)
+
+;; ;; list run steps
+;; (def msg-id (list-run-steps thread-id run-id))
+;; (println "Message ID is:" msg-id)
+
+;; ;; retrieve the message
+;; (println (retrieve-message thread-id msg-id))
+
+;; ;; delete thread
+;; (delete-thread thread-id)
+
+;; ;; delete assistant
+;; (delete-assistant assistant-id)
+;; ;; ...............................................|
 
 
+;; OPTON 1 (re-writing)==========}
+(let [
+      ;; create an assistant
+      assistant-id (create-assistant "Assistant test 2" "gpt-3.5-turbo-1106" "Please return the ID, company name and generate your own description of the value for each in the format: ID - Value - Description; Do not return anything else")
+      ;; create a thread
+      thread-id (create-thread)
+      ;; parse the csv with initial data
+      data (parse-csv "src/openai/data.csv")
+      ;; extract the columns that we require and concat the data
+      sequence-for-messages (extract-and-concat data :FEATURE_ID :FEATURE_NAME)]
 
-;; delete thread
-;; (delete-thread)
 
-;; delete assistant
-(delete-assistant)
+  (println "Assistant ID is:" assistant-id)
+  (println "Thread ID is:" thread-id)
+
+  ;; create the messages
+  (doseq [msg sequence-for-messages]
+    (create-message msg thread-id)
+    (Thread/sleep 1000))
+
+  (let [
+        ;; create the run
+        run-id (create-run assistant-id thread-id)
+        ;; list run steps
+        msg-id (list-run-steps thread-id run-id)]
+    (println "Run ID is:" run-id)
+    (println "Message ID is:" msg-id)
+    ;; retrieve the message
+    (println (retrieve-message thread-id msg-id)))
+
+  ;; delete thread
+  (delete-thread thread-id)
+  ;; delete assistant
+  (delete-assistant assistant-id)
+  )
+
+;; ============================}
